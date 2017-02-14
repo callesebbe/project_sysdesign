@@ -1,9 +1,23 @@
 #infoUpperLeft,#infoUpperRight,#infoLowerLeft,#infoLowerRight {
   width: 50%;
-  height: 40%;
-  float:left;
+  display: flex;
+  flex-wrap: wrap;
+
+
 }
 .managerInfo {
-  display:block;
+    width: 100%;
+    
+}
 
+.infoHeader {
+    font-weight: 900;
+    display: block;
+    
+}
+
+#infoContainer {
+    display: flex;
+    flex-wrap: wrap;
+   
 }
