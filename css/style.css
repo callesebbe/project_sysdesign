@@ -1,23 +1,47 @@
 #infoUpperLeft,#infoUpperRight,#infoLowerLeft,#infoLowerRight {
-  width: 50%;
+  width: 48%;
   display: flex;
   flex-wrap: wrap;
-
+  padding: 1% 1% 1% 1%;
 
 }
+
 .managerInfo {
     width: 100%;
-    
 }
 
 .infoHeader {
     font-weight: 900;
-    display: block;
-    
+    width:100%;
 }
 
 #infoContainer {
     display: flex;
     flex-wrap: wrap;
-   
+}
+
+#infoLowerLeft a, #infoLowerRight a {
+  width: 50%;
+  text-decoration: none;
+}
+
+#infoLowerLeft input {
+  background-color: #800000;
+  color: white;
+}
+
+#infoLowerRight input {
+  background-color: white;
+  color: black;
+}
+
+#infoLowerLeft input, #infoLowerRight input {
+  font-size: 300%;
+  width:100%;
+  border-radius: 10px;
+}
+
+#infoNotes {
+  height: 80%;
+
 }
