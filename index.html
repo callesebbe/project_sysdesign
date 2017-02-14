@@ -4,7 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Nation Pub</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
-
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="js/vue.js"></script>
 </head>
 <body>
 <main>
@@ -13,27 +14,29 @@
     <h1>Start Page</h1>
   </div>
 <div id="infoContainer">
-    <div id="infoUpperLeft">
-    <label class="managerInfo">Manager: <input id="managerName"></label>
-      <label class="managerInfo">Manager phone: <input id="managerPhone"></label>
+  <div id="infoUpperLeft">
+    <p>
+      <label class="managerInfo">Manager: <input id="managerName" value="{{managerName}}"></label></br>
+      <label class="managerInfo">Manager phone: <input id="managerPhone" value="{{managerPhone}}"></label>
+    </p>
   </div>
   <div id="infoUpperRight">
     <label class="infoHeader" for="infoNotes">Notes</label>
-      <textarea id="infoNotes"> </textarea>  
+      <textarea id="infoNotes"> </textarea>
   </div>
   <div id="infoLowerLeft">
     <label class="infoHeader">Application Descripton</label>
-    <a href=""><input type="button" id="kitchenDesc" value="Kitchen"></a>
-    <a href=""><input type="button" id="barDesc" value="Bar"></a>
-    <a href=""><input type="button" id="waitorDesc" value="Waitor"></a>
-    <a href=""><input type="button" id="receptionDesc" value="Reception"></a>
+    <a href="kitchenDesc.html"><input type="button" id="kitchenDesc" value="Kitchen"></a>
+    <a href="barDesc.html"><input type="button" id="barDesc" value="Bar"></a>
+    <a href="waitorDesc.html"><input type="button" id="waitorDesc" value="Waitor"></a>
+    <a href="receptionDesc.html"><input type="button" id="receptionDesc" value="Reception"></a>
   </div>
   <div id="infoLowerRight">
     <label class="infoHeader">User Workstation</label>
-    <a href=""><input type="button" id="kitchenStation" value="Kitchen"></a>
-    <a href=""><input type="button" id="barStation" value="Bar"></a>
-    <a href=""><input type="button" id="waitorStation" value="Waitor"></a>
-    <a href=""><input type="button" id="receptionStation" value="Reception"></a>
+    <a href="kitchen.html"><input type="button" id="kitchenStation" value="Kitchen"></a>
+    <a href="bar.html"><input type="button" id="barStation" value="Bar"></a>
+    <a href="waitor.html"><input type="button" id="waitorStation" value="Waitor"></a>
+    <a href="reception.html"><input type="button" id="receptionStation" value="Reception"></a>
   </div>
 
 </div>
