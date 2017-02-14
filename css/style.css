@@ -1,0 +1,9 @@
+#infoUpperLeft,#infoUpperRight,#infoLowerLeft,#infoLowerRight {
+  width: 50%;
+  height: 40%;
+  float:left;
+}
+.managerInfo {
+  display:block;
+
+}
