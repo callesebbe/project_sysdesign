@@ -1,0 +1,123 @@
+body {
+  background-color: #4D4646;
+  color:white;
+}
+
+h1 {
+  font-size: 400%;
+  margin-top: 0%;
+}
+
+tbody {
+
+}
+
+.button {
+  font-size: 20px;
+  width: 15%;
+  padding: 2%;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 8px;
+}
+
+#addstextcol {
+  position: absolute;
+  top:20%;
+  right: 19%;
+  border-radius: 12px;
+}
+
+#ordertextcol {
+  position: absolute;
+  top:20%;
+  right:2%;
+  text-align: left;
+}
+
+#regretbutton {
+  background-color: black;
+  padding:1%;
+  width: 10%;
+  font-size: 15px;
+  border-radius: 8px;
+  color:white;
+}
+
+#orderqueuebutton {
+  background-color: #971919;
+  color:white;
+  font-weight:bold;
+  top:2%;
+  right:19%;
+}
+
+#startpagebutton {
+  background-color: white;
+  color:black;
+  font-weight:bold;
+  top: 2%;
+  right:2%;
+}
+
+#sendorderbutton {
+  background-color: #3AEC46;
+  color:black;
+  font-weight:bold;
+  bottom: 11%;
+  right:2%;
+}
+
+table {
+  margin-top: -4%;
+  margin-bottom: 2%;
+  width:65%;
+}
+
+tr {
+  width:50%;
+}
+
+td {
+  padding-top: 3%;
+  padding-bottom: 15%;
+
+  /*margin: 20px 20px 30px 20px;*/
+  width: 10.5%;
+
+}
+.huvudrätt {
+  background-color: yellow;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  width: 20%;
+  padding: 4.3%;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 8px;
+}
+
+.sallad {
+  background-color: green;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  width: 20%;
+  padding: 4.3%;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 8px;
+}
+
+.tillbehör {
+  background-color: blue;
+  color: black;
+  font-weight: bold;
+  font-size:20px;
+  width: 20%;
+  padding: 4.3%;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 8px;
+}

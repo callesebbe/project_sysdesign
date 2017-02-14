@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bar</title>
+<link rel="stylesheet" type="text/css" href="css/bar.css">
+
+</head>
+<body>
+<main>
+  <div id="bar"><h1>Bar</h1></div>
+  <section>
+    <table>
+      <tbody>
+        <tr>
+          <td> <button v-on:click="placeOrder" class="huvudrätt" id="wermlandsburgare" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Wermlandsburgare</button> </td>
+          <td> <button v-on:click="placeOrder"  class="sallad" id="ceasarsallad" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Ceasarsallad</button> </td>
+          <td> <button v-on:click="placeOrder"  class="tillbehör" id="nachotallrik" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Nachotallrik</button> </td>
+        </tr>
+        <tr>
+          <td> <button v-on:click="placeOrder" class="huvudrätt" id="cheesesburgare" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Cheeseburgare</button> </td>
+          <td> <button v-on:click="placeOrder" class="sallad" id="halloumisallad" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Halloumisallad</button> </td>
+          <td> <button v-on:click="placeOrder" class="tillbehör" id="pommestallrik" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Pommestallrik</button> </td>
+        </tr>
+        <tr>
+          <td> <button v-on:click="placeOrder" class="huvudrätt" id="vegoburgare" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Veg.burgare</button> </td>
+          <td> <button v-on:click="placeOrder"  class="sallad" id="kycklingsallad" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Kycklingsallad</button> </td>
+          <td> <button v-on:click="placeOrder" class="tillbehör" id="kycklingvingar" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Kycklingvingar</button> </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <div>
+    <button v-on:click="placeOrder" class="button" id="startpagebutton" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Start Page</button>
+  </div>
+  <div>
+    <button v-on:click="placeOrder" class="button" id="orderqueuebutton" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Order Queue</button>
+  </div>
+  <div>
+    <button v-on:click="placeOrder" class="button" id="sendorderbutton" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Send Order</button>
+  </div>
+  <div>
+    <button v-on:click="placeOrder" id="regretbutton" type="submit"><img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png" >Regret latest change</button>
+  </div>
+  <div>
+    <textarea id="ordertextcol" rows="25" cols ="25" wrap="soft" readonly="readonly">
+      ORDER
+    </textarea>
+  </div>
+  <div>
+    <textarea id="addstextcol" rows="33" cols ="26" wrap="soft" readonly="readonly">
+    </textarea>
+  </div>
+
+</main>
+<footer>
+  <hr>I Bidoni &copy;
+</footer>
+</body>
+</html>
