@@ -1,19 +1,30 @@
+body {
+    background: #4d4646;
+    color: white;
+    font-family: sans-serif;
+    
+}
+
 #infoUpperLeft,#infoUpperRight,#infoLowerLeft,#infoLowerRight {
-  width: 48%;
+  width: 46%;
   display: flex;
   flex-wrap: wrap;
-  padding: 1% 1% 1% 1%;
+  padding: 2%;
+  
 
 }
 
-.managerInfo {
-    width: 100%;
+.managerInfo, .infoHeader{
+    width: 150%;
+    font-weight: 900;
+    font-size: 150%;
 }
 
 .infoHeader {
-    font-weight: 900;
-    width:100%;
+     font-size: 200%;
 }
+
+
 
 #infoContainer {
     display: flex;
@@ -24,7 +35,6 @@
   width: 50%;
   text-decoration: none;
 }
-
 #infoLowerLeft input {
   background-color: #800000;
   color: white;
@@ -37,11 +47,16 @@
 
 #infoLowerLeft input, #infoLowerRight input {
   font-size: 300%;
-  width:100%;
+  width:98%;
+  padding: 2%;
   border-radius: 10px;
 }
 
 #infoNotes {
-  height: 80%;
-
+  
+    height: 100%;
+    width: 100%;
+   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
 }
