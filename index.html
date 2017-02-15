@@ -5,7 +5,6 @@
 <title>Nation Pub</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
-<script src="js/vue.js"></script>
 </head>
 <body>
 <main>
@@ -16,8 +15,8 @@
 <div id="infoContainer">
   <div id="infoUpperLeft">
     <p>
-      <label class="managerInfo">Manager: <input id="managerName" value="{{managerName}}"></label></br>
-      <label class="managerInfo">Manager phone: <input id="managerPhone" value="{{managerPhone}}"></label>
+      <label class="managerInfo">Manager: <input id="managerName" :value="managername"></label></br>
+      <label class="managerInfo">Manager phone: <input id="managerPhone" :value="managerphone"></label>
     </p>
   </div>
   <div id="infoUpperRight">
@@ -42,7 +41,7 @@
 </div>
 </main>
 <footer>
-  <!--<hr>I Bidoni &copy;
 </footer>
+<script src="js/vue.js"></script>
 </body>
 </html>
