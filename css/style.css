@@ -28,16 +28,19 @@ h1 {
 }
 
 
-
 #infoContainer {
     display: flex;
     flex-wrap: wrap;
 }
 
-#infoLowerLeft a, #infoLowerRight a {
-  width: 50%;
-  text-decoration: none;
+#infoLowerLeft input, #infoLowerRight input {
+  font-size: 300%;
+  width:45%;
+  padding: 5%;
+  border-radius: 10px;
 }
+
+
 #infoLowerLeft input {
   background-color: #800000;
   color: white;
@@ -46,13 +49,6 @@ h1 {
 #infoLowerRight input {
   background-color: white;
   color: black;
-}
-
-#infoLowerLeft input, #infoLowerRight input {
-  font-size: 300%;
-  width:98%;
-  padding: 2%;
-  border-radius: 10px;
 }
 
 #infoNotes {
