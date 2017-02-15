@@ -5,11 +5,10 @@
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <title>Nation Pub</title>
          <link rel="stylesheet" type="text/css" href="css/style.css">
-
-         <script src="js/pub.js"></script>
+         <script src="https://unpkg.com/vue/dist/vue.js"></script>
     </head>
 
-    <body onload="load_info()">
+    <body>
 
       <div id="header">
         <h1>Start Page</h1>
@@ -19,8 +18,8 @@
 
       <div id="infoUpperLeft">
         <p>
-          <label class="managerInfo">Manager: <input id="managerName" ></label><br>
-          <label class="managerInfo">Manager phone: <input id="managerPhone" ></label>
+          <label class="managerInfo">Manager: <input id="managerName" :value="managername"></label><br>
+          <label class="managerInfo">Manager phone: <input id="managerPhone" :value="managerphone"></label>
         </p>
       </div>
 

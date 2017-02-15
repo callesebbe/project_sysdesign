@@ -1,3 +1,6 @@
+function goToPage(url) {
+  window.location= url;
+}
 var v = new Vue({
   el: '#infoContainer',
   data: {
