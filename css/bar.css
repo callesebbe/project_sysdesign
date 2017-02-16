@@ -21,18 +21,45 @@ tbody {
   border-radius: 8px;
 }
 
-#addstextcol {
+.allergibox {
   position: absolute;
   top:20%;
-  right: 19%;
+  right: 24%;
   border-radius: 12px;
+  font-size: 14pt;
 }
 
-#ordertextcol {
+#listbox {
   position: absolute;
   top:20%;
   right:2%;
   text-align: left;
+}
+
+#incr {
+  position: absolute;
+  width: 2%;
+  bottom:2%;
+  right: 48%;
+}
+
+#decr {
+  position: absolute;
+  width:2%;
+  bottom:2%;
+  right:55%;
+}
+
+#amountdisplay {
+  background-color: white;
+  position: absolute;
+  width:3%;
+  right:51%;
+  bottom:-1%;
+  text-align: center;
+  color:black;
+  height: 5%;
+  font-size: 16pt;
 }
 
 #regretbutton {
