@@ -1,8 +1,9 @@
+// Info Vue .
 var v = new Vue({
   el: '#infoContainer',
   data: {
     managername: 'Per Persson',
-    managerphone: '012345678'
+    managerphone: '012345678',
   },
   methods: {
     goToPage: function(url) {
