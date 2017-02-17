@@ -18,19 +18,19 @@
     <h3>Guest Capacity</h3>
     <div id ="gradingContainer">
       <div>
-        <input id="gradingGreen" v-on:click="changeGrade('gradingGreen')" type="button" value="">
+        <input id="gradingGreen" @click="changeGrade('gradingGreen')" type="button" value="">
       </div>
       <div>
-        <input id="gradingYellow" v-on:click="changeGrade('gradingYellow')" type="button" value="">
+        <input id="gradingYellow" @click="changeGrade('gradingYellow')" type="button" value="">
       </div>
       <div>
-        <input id="gradingOrange" v-on:click="changeGrade('gradingOrange')" type="button" value="">
+        <input id="gradingOrange" @click="changeGrade('gradingOrange')" type="button" value="">
       </div>
       <div>
-        <input id="gradingRed" v-on:click="changeGrade('gradingRed')" type="button" value="">
+        <input id="gradingRed" @click="changeGrade('gradingRed')" type="button" value="">
       </div>
     </div>
-    <p>Latest updated:
+    <p><input type="button" value="Update" @click="updateGrading()" > {{timeSincelastGrading}} seconds ago
   </div>
 </main>
 <script src="js/receptionVue.js"></script>
