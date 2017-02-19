@@ -57,3 +57,55 @@ h1 {
   resize: none;
   overflow:auto;
 }
+
+#gradingDiv {
+  padding: 10% 2% 2% 2%;
+
+}
+
+#startPageButton {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  font-size: 300%;
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+}
+#gradingContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100px;
+  width: 50%;
+  justify-content: space-between;
+}
+
+#gradingContainer div {
+  flex-basis: 24%;
+  height: 100%;
+
+}
+#gradingContainer input{
+  height: 100%;
+  width: 100%;
+  font-size: 300%;
+  color: white;
+  line-height: 200%;
+  font-weight: bold;
+  text-align: center;
+}
+#gradingGreen  {
+  background-color: #01DF01;
+}
+
+#gradingYellow  {
+  background-color: #FFFF00;
+}
+
+#gradingOrange  {
+  background-color: #FF8000;
+}
+
+#gradingRed  {
+  background-color: #DF0101;
+}

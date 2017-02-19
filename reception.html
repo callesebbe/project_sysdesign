@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Nation Pub</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<main id="mainId">
+  <div id="header">
+    <h1>Reception</h1>
+  </div>
+
+  <input type="button" id="startPageButton" @click="goToPage('index.html')" value="Start Page">
+  <div id="gradingDiv">
+    <h3>Guest Capacity</h3>
+    <div id ="gradingContainer">
+      <div>
+        <input id="gradingGreen" @click="changeGrade('gradingGreen')" type="button" value="">
+      </div>
+      <div>
+        <input id="gradingYellow" @click="changeGrade('gradingYellow')" type="button" value="">
+      </div>
+      <div>
+        <input id="gradingOrange" @click="changeGrade('gradingOrange')" type="button" value="">
+      </div>
+      <div>
+        <input id="gradingRed" @click="changeGrade('gradingRed')" type="button" value="">
+      </div>
+    </div>
+    <p><input type="button" value="Update" @click="updateGrading()" > {{timeSincelastGrading}} seconds ago
+  </div>
+</main>
+<script src="js/receptionVue.js"></script>
+</body>
+</html>

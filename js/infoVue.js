@@ -2,14 +2,25 @@
 var v = new Vue({
   el: '#infoContainer',
   data: {
-    managername: 'Per Persson',
-    managerphone: '012345678',
+    managername: "",
+    managerphone: "",
+    notes: "", 
   },
   methods: {
     goToPage: function(url) {
-      this.managername = document.getElementById('managerName').value;
-      this.managerphone = document.getElementById('managerPhone').value;
+      localStorage.setItem( "managername", this.managername); 
+      localStorage.setItem( "managerphone", this.managerphone); 
+      localStorage.setItem( "notes", this.notes); 
+        
       window.location= url;
+    },
+      
+    loadInfo: function() {
+         this.managername = localStorage.getItem("managername");
+         this.managerphone = localStorage.getItem("managerphone");
+         this.notes = localStorage.getItem("notes");
     }
   }
 })
+
+v.loadInfo();

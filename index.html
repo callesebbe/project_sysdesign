@@ -9,23 +9,23 @@
     </head>
 
     <body>
-
       <div id="header">
         <h1>Start Page</h1>
       </div>
 
+        
     <div id="infoContainer">
-
+        
       <div id="infoUpperLeft">
         <p>
-          <label class="managerInfo">Manager: <input id="managerName" :value="managername"></label><br>
-          <label class="managerInfo">Manager phone: <input id="managerPhone" :value="managerphone"></label>
+          <label class="managerInfo">Manager: <input type=text id="managerName"  v-model="managername"></label><br>
+          <label class="managerInfo">Manager phone: <input type=text id="managerphone"  v-model="managerphone"></label>
         </p>
       </div>
 
       <div id="infoUpperRight">
         <label class="infoHeader" for="infoNotes">Notes</label>
-          <textarea id="infoNotes"> </textarea>
+          <textarea id="infoNotes"  v-model="notes"> </textarea>
       </div>
 
       <div id="infoLowerLeft">
@@ -38,10 +38,10 @@
 
       <div id="infoLowerRight">
         <label class="infoHeader">User Workstation</label>
-        <input type="button" v-on:click="goToPage('i2.html');return false;" id="kitchenStation" value="Kitchen">
-        <input type="button" v-on:click="goToPage('bar.html');return false;"id="barStation" value="Bar">
-        <input type="button" v-on:click="goToPage('waitor.html');return false;" id="waitorStation" value="Waitor">
-        <input type="button" v-on:click="goToPage('reception.html');return false;" id="receptionStation" value="Reception">
+        <input type="button" @click="goToPage('i2.html');return false;" id="kitchenStation" value="Kitchen">
+        <input type="button" @click="goToPage('bar.html');return false;"id="barStation" value="Bar">
+        <input type="button" @click="goToPage('waitor.html');return false;" id="waitorStation" value="Waitor">
+        <input type="button" @click="goToPage('reception.html');return false;" id="receptionStation" value="Reception">
       </div>
 
     </div>
