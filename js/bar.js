@@ -77,6 +77,17 @@ var app = new Vue({
     //Should be minutes
     var differenceInSec = Math.round(difference / 1000);
     this.timeSincelastGrading = differenceInSec;
-  }
+  },
+      
+  load: function() {
+    this.grade = localStorage.getItem("grade");
+    this.lastGrading = localStorage.getItem("lastGrading");
+    
+    document.getElementById(this.grade).value = "X";
+        
+    this.updateGrading();      
+   }
   }
 })
+
+app.load();
