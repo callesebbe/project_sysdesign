@@ -56,7 +56,7 @@
     <button id="incr" v-on:click="increment">+</button>
 </div>
 
-  <div id="listbox">
+  <div id="listbox" >
   <ul>
     <li
       is="todo-item"
@@ -68,9 +68,11 @@
 </div>
 <div class="allergibox" v-show="WB">
 <form action="">
-  <input id="extra bacon" type="radio" name="baconval" value="extra bacon"> Extra bacon
-  <br><br><input id="lök" type="radio" name="lökval" value="utan lök"> Utan lök
-  <br><br><input id="gluten" type="radio" name="gluten" value="glutenfri"> Glutenfri
+  <input id="extra bacon" type="checkbox" name="order[]" value="extra bacon" v-bind:checked="ischecked"> Extra bacon
+  <br><br><input id="lök" type="checkbox" name="order[]" value="utan lök" v-bind:checked="ischecked"> Utan lök
+  <br><br><input id="gluten" type="checkbox" name="order[]" value="glutenfri" v-bind:checked="ischecked"> Glutenfri
+  <br><br><input id="laktos" type="checkbox" name="order[]" value="laktosfri" v-bind:checked="ischecked"> Laktosfri
+
 
 </form>
 
