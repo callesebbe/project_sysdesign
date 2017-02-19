@@ -35,7 +35,7 @@
     </table>
   </section>
   <div>
-    <button v-on:click="placeOrder" class="button" id="startpagebutton" type="submit">Start Page</button>
+    <button @click="goToPage('index.html')" class="button" id="startpagebutton" type="submit">Start Page</button>
   </div>
   <div>
     <button v-on:click="placeOrder" class="button" id="orderqueuebutton" type="submit">Order Queue</button>
@@ -75,12 +75,26 @@
 </form>
 
   </div>
-</div>
+  <div id="gradingDiv">
+    <div id ="gradingContainer">
+      <div>
+        <input id="gradingGreen" @click="changeGrade('gradingGreen')" type="button" value="">
+      </div>
+      <div>
+        <input id="gradingYellow" @click="changeGrade('gradingYellow')" type="button" value="">
+      </div>
+      <div>
+        <input id="gradingOrange" @click="changeGrade('gradingOrange')" type="button" value="">
+      </div>
+      <div>
+        <input id="gradingRed" @click="changeGrade('gradingRed')" type="button" value="">
+      </div>
+    </div>
+    <p><input type="button" value="Update" @click="updateGrading()" > {{timeSincelastGrading}} seconds ago
+  </div>
 
+</div>
 </main>
-<footer>
-  <hr>I Bidoni &copy;
-</footer>
 <script src="js/bar.js"></script>
 </body>
 
