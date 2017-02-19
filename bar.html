@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bar</title>
+<link rel="stylesheet" type="text/css" href="css/bar.css">
+<!--<script>
+    docLoaded(indexPageLoaded);
+</script>-->
+</head>
+<body>
+<main>
+  <div id="bar" ><h1>Bar</h1></div>
+  <div id="app" v-show="show" v-cloak>
+  <section>
+    <table>
+      <tbody id="orders">
+        <tr>
+          <td> <button v-on:click="placeOrder('Wermlandsburgare')" class="huvudrätt" id="wermlandsburgare" name="wermlandsburgare" type="submit"><!--<img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png">--> Wermlandsburgare</button> </td>
+          <td> <button v-on:click="placeOrder('Ceasarsallad')"  class="sallad" id="ceasarsallad" type="submit">Ceasarsallad</button> </td>
+          <td> <button v-on:click="placeOrder('Nachotallrik')"  class="tillbehör" id="nachotallrik" type="submit">Nachotallrik</button> </td>
+        </tr>
+        <tr>
+          <td> <button v-on:click="placeOrder('Cheeseburgare')" class="huvudrätt" id="cheesesburgare" type="submit">Cheeseburgare</button> </td>
+          <td> <button v-on:click="placeOrder('Halloumisallad')" class="sallad" id="halloumisallad" type="submit">Halloumisallad</button> </td>
+          <td> <button v-on:click="placeOrder('Pommestallrik')" class="tillbehör" id="pommestallrik" type="submit">Pommestallrik</button> </td>
+        </tr>
+        <tr>
+          <td> <button v-on:click="placeOrder('Vegoburgare')" class="huvudrätt" id="vegoburgare" type="submit">Veg.burgare</button> </td>
+          <td> <button v-on:click="placeOrder('Kycklingsallad')" class="sallad" id="kycklingsallad" type="submit">Kycklingsallad</button> </td>
+          <td> <button v-on:click="placeOrder('Kycklingvingar')" class="tillbehör" id="kycklingvingar" type="submit">Kycklingvingar</button> </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <div>
+    <button v-on:click="placeOrder" class="button" id="startpagebutton" type="submit">Start Page</button>
+  </div>
+  <div>
+    <button v-on:click="placeOrder" class="button" id="orderqueuebutton" type="submit">Order Queue</button>
+  </div>
+  <div>
+    <button v-on:click="sendOrder" class="button" id="sendorderbutton" type="submit">Send Order</button>
+  </div>
+  <div>
+    <button v-on:click="reviewOrder" id="regretbutton" type="submit">Review Order</button>
+  </div>
+
+
+<div id="amount" v-show="show2">
+    <p id="amountdisplay" >
+      {{ count }}
+    </p>
+    <button id="decr" v-on:click="decrement">-</button>
+    <button id="incr" v-on:click="increment">+</button>
+</div>
+
+  <div id="listbox">
+  <ul>
+    <li
+      is="todo-item"
+      v-for="(todo, index) in todos"
+      v-bind:title="todo"
+      v-on:remove="todos.splice(index, 1)"
+    ></li>
+  </ul>
+</div>
+<div class="allergibox" v-show="WB">
+<form action="">
+  <input id="extra bacon" type="radio" name="baconval" value="extra bacon"> Extra bacon
+  <br><br><input id="lök" type="radio" name="lökval" value="utan lök"> Utan lök
+  <br><br><input id="gluten" type="radio" name="gluten" value="glutenfri"> Glutenfri
+
+</form>
+
+  </div>
+</div>
+
+</main>
+<footer>
+  <hr>I Bidoni &copy;
+</footer>
+<script src="js/bar.js"></script>
+</body>
+
+
+
+</html>
