@@ -48,4 +48,4 @@ var reception = new Vue({
 })
 
 reception.loadReception();
-window.setInterval( reception.updateGrading, 100);
+window.setInterval( reception.updateGrading, 1000);

@@ -121,4 +121,4 @@ var app = new Vue({
 })
 
 app.load();
-window.setInterval( app.updateGrading, 10   00);
+window.setInterval( app.updateGrading, 1000);
