@@ -17,7 +17,7 @@
     <table>
       <tbody id="orders">
         <tr>
-          <td> <button v-on:click="placeOrder('Wermlandsburgare')" class="huvudrätt" id="wermlandsburgare" name="wermlandsburgare" type="submit"><!--<img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png">--> Wermlandsburgare</button> </td>
+          <td> <button v-on:click="placeOrder('Wermlandsburgare','wermlandsburgare')" class="huvudrätt" id="wermlandsburgare" name="wermlandsburgare" type="submit"><!--<img2 src="http://www.clipartbest.com/cliparts/Kcj/eGX/KcjeGXani.png">--> Wermlandsburgare</button> </td>
           <td> <button v-on:click="placeOrder('Ceasarsallad')"  class="sallad" id="ceasarsallad" type="submit">Ceasarsallad</button> </td>
           <td> <button v-on:click="placeOrder('Nachotallrik')"  class="tillbehör" id="nachotallrik" type="submit">Nachotallrik</button> </td>
         </tr>
@@ -62,9 +62,10 @@
   <ul>
     <li
       is="todo-item"
-      v-for="(todo, index) in todos"
+      v-for="(todo, index) in todos" 
       v-bind:title="todo"
       v-on:remove="todos.splice(index, 1)"
+      v-model:
     ></li>
   </ul>
 </div>
@@ -94,7 +95,7 @@
         <input id="gradingRed" @click="changeGrade('gradingRed')" type="button" value="">
       </div>
     </div>
-    <p><input type="button" value="Update" @click="updateGrading()" > {{timeSincelastGrading}} seconds ago
+    <p> {{timeSincelastGrading}} seconds ago
   </div>
 
 </div>
