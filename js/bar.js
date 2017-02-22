@@ -35,7 +35,7 @@ var app = new Vue({
     },
     placeOrder: function(typee) {
       if (temp > 0){
-    
+
       this.todos.push(this.count + "x " + this.name + ": " + this.allergicheck())
     }
       this.WB = true,
@@ -45,7 +45,7 @@ var app = new Vue({
       this.uncheckallergi(),
       orderItems = [],
       this.name = typee
-     
+
     },
     sendOrder: function() {
       this.show2 = false,
@@ -104,7 +104,12 @@ var app = new Vue({
     var difference = now - this.lastGrading;
     //Should be minutes
     var differenceInSec = Math.round(difference / 1000);
-    this.timeSincelastGrading = differenceInSec;
+    if(differenceInSec <60) {
+      this.timeSincelastGrading = differenceInSec+" seconds ago";
+    }else {
+      this.timeSincelastGrading = Math.round(differenceInSec /60)+" minutes ago";
+      }
+
   },
 
   load: function() {
