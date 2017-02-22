@@ -83,6 +83,7 @@ h1 {
 #gradingContainer div {
   flex-basis: 24%;
   height: 100%;
+  border-radius: 5px;
 
 }
 #gradingContainer input{
