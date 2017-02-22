@@ -107,7 +107,7 @@ var app = new Vue({
     if(differenceInSec <60) {
       this.timeSincelastGrading = differenceInSec+" seconds ago";
     }else {
-      this.timeSincelastGrading = Math.round(differenceInSec /60)+" minutes ago";
+      this.timeSincelastGrading = Math.round(differenceInSec /60)+" minute(s) ago";
       }
 
   },
