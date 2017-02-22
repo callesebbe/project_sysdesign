@@ -7,12 +7,9 @@ body {
 h1 {
   padding: 2% 0 0 2%;
 }
-input:hover {
-  border: 1px solid black;
-  cursor: pointer;
-}
-button:hover {
-  border: 1px solid black;
+
+.hoverEffect:hover {
+  border: 2px solid black;
   cursor: pointer;
 }
 
@@ -93,6 +90,7 @@ button:hover {
   height: 100%;
 
 }
+
 #gradingContainer input{
   height: 100%;
   width: 100%;
