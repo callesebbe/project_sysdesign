@@ -11,6 +11,14 @@ h1 {
 tbody {
 
 }
+input:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+button:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
 
 .button {
   font-size: 20px;
