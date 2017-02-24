@@ -57,7 +57,7 @@
     v-for="(todo, index) in todos"
     v-bind:title ="todo.typee"
     v-bind:count ="todo.count"
-    v-bind:allerg ="allerg in orderItems"
+    v-bind:allerg ="todo.orderItems"
     v-on:remove="todos.splice(index, 1)"
     ></li>
 
@@ -65,10 +65,10 @@
 </div>
 <div class="allergibox" v-show="WB">
 <form action="">
-  <input id="extra bacon" type="checkbox" name="order[]" value="extra bacon" v-bind:checked="ischecked" v-on:click="allergicheck"> Extra bacon
- <br><br><input id="lök" type="checkbox" name="order[]" value="utan lök" v-bind:checked="ischecked" v-on:click="allergicheck"> Utan lök
- <br><br><input id="gluten" type="checkbox" name="order[]" value="glutenfri" v-bind:checked="ischecked" v-on:click="allergicheck"> Glutenfri
- <br><br><input id="laktos" type="checkbox" name="order[]" value="laktosfri" v-bind:checked="ischecked" v-on:click="allergicheck"> Laktosfri
+  <input id="extra bacon" type="checkbox" name="order[]" value="extra bacon"  v-on:click="allergicheck"> Extra bacon
+ <br><br><input id="lök" type="checkbox" name="order[]" value="utan lök"  v-on:click="allergicheck"> Utan lök
+ <br><br><input id="gluten" type="checkbox" name="order[]" value="glutenfri"  v-on:click="allergicheck"> Glutenfri
+ <br><br><input id="laktos" type="checkbox" name="order[]" value="laktosfri"  v-on:click="allergicheck"> Laktosfri
   <!--<input id="extra bacon" type="checkbox" name="order[]" value="extra bacon" v-bind:checked="ischecked"> Extra bacon
   <br><br><input id="lök" type="checkbox" name="order[]" value="utan lök" v-bind:checked="ischecked"> Utan lök
   <br><br><input id="gluten" type="checkbox" name="order[]" value="glutenfri" v-bind:checked="ischecked"> Glutenfri

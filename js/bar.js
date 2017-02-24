@@ -1,7 +1,7 @@
 Vue.component('todo-item', {
   template: '\
     <li>\
-      {{ title }} {{ count }} {{ allerg }}\
+      {{ count }}x {{ title }}  {{ allerg[0] }} {{allerg[1]}} {{allerg[2]}} {{allerg[3]}} \
       <button v-on:click="$emit(\'remove\')">X</button>\
     </li>\
   ',
@@ -42,10 +42,10 @@ var app = new Vue({
      this.WB = true,
      this.count = 1,
      this.show2 = true,
-     this.uncheckallergi(),
      typ.orderItems = [],
      typ.count = this.count,
-     this.name = typee
+     this.name = typee,
+     this.uncheckallergi(),
      this.todos.push(typ)
    },
     /*placeOrder: function(typee) {
@@ -74,7 +74,6 @@ var app = new Vue({
       if (temp > 0){
       this.todos.push(this.count + "x " + this.name + ": " + this.allergicheck()),
       temp = 0,
-
       this.show2 = false,
       this.uncheckallergi(),
       orderItems = [],
@@ -83,12 +82,15 @@ var app = new Vue({
   },
 
     allergicheck: function () {
-    var orderItems = [].filter.call(document.getElementsByName('order[]'), function(i) {
+    var orderItems = [].filter.call(document.getElementsByName('order[]'),
+    function(i) {
       return i.checked;
-    }).map(function(i) {
-      return i.value;
+    }
+  ).map(function(i) {
+    return i.value;
     });
-        this.todos[this.listcount-1].orderItems = orderItems;
+
+    this.todos[this.listcount-1].orderItems = orderItems;
 
   },
 /*  allergicheck: function () {
@@ -100,9 +102,13 @@ var app = new Vue({
     return orderItems
   },*/
   uncheckallergi: function () {
-    this.ischecked = false
-
-
+    var checkboxes = new Array();
+    checkboxes = document.getElementsByName('order[]');
+    for (var i=0; i<checkboxes.length; i++)  {
+      if (checkboxes[i].type == 'checkbox')   {
+        checkboxes[i].checked = false;
+      }
+    }
   },
   goToPage: function(url) {
     localStorage.setItem( "grade", this.grade);
