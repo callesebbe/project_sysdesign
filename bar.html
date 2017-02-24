@@ -45,24 +45,17 @@
   <div>
     <button v-on:click="sendOrder" class="button" id="sendorderbutton" type="submit">Send Order</button>
   </div>
-  <div>
+  <div id="konstigDivUtanNamn">
     <button v-on:click="reviewOrder" id="regretbutton" type="submit">Review Order</button>
   </div>
 
 
-<div id="amount" v-show="show2">
-    <p id="amountdisplay" >
-      {{ count }}
-    </p>
-    <button id="decr" v-on:click="decrement">-</button>
-    <button id="incr" v-on:click="increment">+</button>
-</div>
 
   <div id="listbox" >
   <ul>
     <li
       is="todo-item"
-      v-for="(todo, index) in todos" 
+      v-for="(todo, index) in todos"
       v-bind:title="todo"
       v-on:remove="todos.splice(index, 1)"
       v-model:
@@ -81,6 +74,7 @@
 
   </div>
   <div id="gradingDiv">
+    <h3 style="margin-bottom: 1%">How occupied is the restaurant?</h3>
     <div id ="gradingContainer">
       <div>
         <input id="gradingGreen" @click="changeGrade('gradingGreen')" type="button" value="">
@@ -95,7 +89,15 @@
         <input id="gradingRed" @click="changeGrade('gradingRed')" type="button" value="">
       </div>
     </div>
-    <p> {{timeSincelastGrading}} seconds ago
+    <p> {{timeSincelastGrading}}
+    </div>
+  <div id="amount" v-show="show2">
+    <h3 style="margin-bottom:1%">Quantity: </h3>
+      <p id="amountdisplay" >
+        {{ count }}
+      </p>
+      <button id="decr" v-on:click="decrement">-</button>
+      <button id="incr" v-on:click="increment">+</button>
   </div>
 
 </div>
