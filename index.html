@@ -38,7 +38,7 @@
 
       <div id="infoLowerRight">
         <label class="infoHeader">User Workstation</label>
-        <input type="button" onclick="alert('Not implemented')" id="kitchenStation" value="Kitchen">
+        <input type="button" @click="goToPage('kitchen.html');return false;" id="kitchenStation" value="Kitchen">
         <input type="button" @click="goToPage('bar.html');return false;"id="barStation" value="Bar">
         <input type="button" onclick="alert('not implemented')" id="waitorStation" value="Waitor">
         <input type="button" @click="goToPage('reception.html');return false;" id="receptionStation" value="Reception">
