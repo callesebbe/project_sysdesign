@@ -6,11 +6,26 @@ var app = new Vue({
     timeSincelastGrading: 0
   },
   methods: {
-    goToPage: function(url) {
-      localStorage.setItem( "grade", this.grade);
-      localStorage.setItem( "lastGrading", this.lastGrading);
+    outputOrders: function() {
+      var parentDiv = document.getElementById('orderDivs');
+      var h = true;
+      var u = 0;
+      while(h && u < 8) {
+        var childDiv = document.createElement('div');
+        var orderList = document.createElement('ul');
+        var li = document.createElement('li');
+        li.innerHTML += 'Vegburgare';
+        orderList.appendChild(li);
+        var li = document.createElement('li');
+        li.innerHTML += 'Kokain';
+        orderList.appendChild(li);
+        childDiv.innerHTML += 'Order #'+u;
+        childDiv.className = 'order';
 
-      window.location= url;
+        childDiv.appendChild(orderList);
+        parentDiv.appendChild(childDiv);
+        ++u;
+      }
     },
     goToPage: function(url) {
       localStorage.setItem( "grade", this.grade);
@@ -35,8 +50,12 @@ var app = new Vue({
       var now = new Date().getTime();
       var difference = now - this.lastGrading;
       var differenceInSec = Math.round(difference / 1000);
-      this.timeSincelastGrading = differenceInSec;
-    },
+      if(differenceInSec <60) {
+        this.timeSincelastGrading = differenceInSec+" seconds ago";
+      }else {
+        this.timeSincelastGrading = Math.round(differenceInSec /60)+" minute(s) ago";
+        }
+      },
 
     load: function() {
       this.grade = localStorage.getItem("grade");
@@ -46,6 +65,6 @@ var app = new Vue({
     }
   }
 })
-
+app.outputOrders();
 app.load();
 window.setInterval( app.updateGrading, 1000);

@@ -7,6 +7,14 @@ h1 {
   font-size: 400%;
   margin-top: 0%;
 }
+input:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+button:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
 
 .button {
   font-size: 20px;
@@ -29,6 +37,19 @@ h1 {
   height: 80%;
   width: 80%;
   border: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+}
+.order {
+  border-radius: 8px;
+  padding: 3%;
+  width: 10%;
+  background-color: red;
+  border: 1px solid green;
+}
+.order ul,li {
+  margin: 0;
+  padding: 0;
 }
 
 #gradingDiv {
