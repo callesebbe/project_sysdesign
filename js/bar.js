@@ -16,6 +16,7 @@ var app = new Vue({
     show2 :false,
     show : true,
     count : 1,
+    listcount: 0,
     name : '',
     WB : false,
     ischecked : false,
@@ -28,12 +29,26 @@ var app = new Vue({
   },
   methods: {
     decrement: function () {
+          this.todos[this.listcount -1 ].count -= 1;
       this.count -= 1
     },
     increment: function() {
+          this.todos[this.listcount -1].count += 1;
       this.count += 1
     },
     placeOrder: function(typee) {
+     var typ = {typee};
+     this.listcount += 1,
+     this.WB = true,
+     this.count = 1,
+     this.show2 = true,
+     this.uncheckallergi(),
+     typ.orderItems = [],
+     typ.count = this.count,
+     this.name = typee
+     this.todos.push(typ)
+   },
+    /*placeOrder: function(typee) {
       if (temp > 0){
 
       this.todos.push(this.count + "x " + this.name + ": " + this.allergicheck())
@@ -46,7 +61,7 @@ var app = new Vue({
       orderItems = [],
       this.name = typee
 
-    },
+    },*/
     sendOrder: function() {
       this.show2 = false,
       this.count = 1,
@@ -66,14 +81,24 @@ var app = new Vue({
       this.WB = false
       }
   },
-  allergicheck: function () {
+
+    allergicheck: function () {
+    var orderItems = [].filter.call(document.getElementsByName('order[]'), function(i) {
+      return i.checked;
+    }).map(function(i) {
+      return i.value;
+    });
+        this.todos[this.listcount-1].orderItems = orderItems;
+
+  },
+/*  allergicheck: function () {
     var orderItems = [].filter.call(document.getElementsByName('order[]'), function(i) {
       return i.checked;
     }).map(function(i) {
       return i.value;
     });
     return orderItems
-  },
+  },*/
   uncheckallergi: function () {
     this.ischecked = false
 

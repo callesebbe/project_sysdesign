@@ -64,11 +64,15 @@
 </div>
 <div class="allergibox" v-show="WB">
 <form action="">
-  <input id="extra bacon" type="checkbox" name="order[]" value="extra bacon" v-bind:checked="ischecked"> Extra bacon
+  <input id="extra bacon" type="checkbox" name="order[]" value="extra bacon" v-bind:checked="ischecked" v-on:click="allergicheck"> Extra bacon
+ <br><br><input id="lök" type="checkbox" name="order[]" value="utan lök" v-bind:checked="ischecked" v-on:click="allergicheck"> Utan lök
+ <br><br><input id="gluten" type="checkbox" name="order[]" value="glutenfri" v-bind:checked="ischecked" v-on:click="allergicheck"> Glutenfri
+ <br><br><input id="laktos" type="checkbox" name="order[]" value="laktosfri" v-bind:checked="ischecked" v-on:click="allergicheck"> Laktosfri
+  <!--<input id="extra bacon" type="checkbox" name="order[]" value="extra bacon" v-bind:checked="ischecked"> Extra bacon
   <br><br><input id="lök" type="checkbox" name="order[]" value="utan lök" v-bind:checked="ischecked"> Utan lök
   <br><br><input id="gluten" type="checkbox" name="order[]" value="glutenfri" v-bind:checked="ischecked"> Glutenfri
   <br><br><input id="laktos" type="checkbox" name="order[]" value="laktosfri" v-bind:checked="ischecked"> Laktosfri
-
+-->
 
 </form>
 
