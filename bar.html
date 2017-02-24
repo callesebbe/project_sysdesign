@@ -53,13 +53,14 @@
 
   <div id="listbox" >
   <ul>
-    <li
-      is="todo-item"
-      v-for="(todo, index) in todos"
-      v-bind:title="todo"
-      v-on:remove="todos.splice(index, 1)"
-      v-model:
+    <li is="todo-item"
+    v-for="(todo, index) in todos"
+    v-bind:title ="todo.typee"
+    v-bind:count ="todo.count"
+    v-bind:allerg ="allerg in orderItems"
+    v-on:remove="todos.splice(index, 1)"
     ></li>
+
   </ul>
 </div>
 <div class="allergibox" v-show="WB">

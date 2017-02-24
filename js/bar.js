@@ -1,11 +1,11 @@
 Vue.component('todo-item', {
   template: '\
     <li>\
-      {{ title }}\
+      {{ title }} {{ count }} {{ allerg }}\
       <button v-on:click="$emit(\'remove\')">X</button>\
     </li>\
   ',
-  props: ['title']
+  props: ['title','count','allerg']
 })
 var orderItems = [];
 
