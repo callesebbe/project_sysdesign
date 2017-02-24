@@ -13,24 +13,24 @@
     <h1>Reception</h1>
   </div>
 
-  <input type="button" id="startPageButton" @click="goToPage('index.html')" value="Start Page">
+  <input class="hoverEffect" type="button" id="startPageButton" @click="goToPage('index.html')" value="Start Page">
   <div id="gradingDiv">
-    <h3>Guest Capacity</h3>
+    <h3>Occupation of the restaurant:</h3>
     <div id ="gradingContainer">
       <div>
-        <input id="gradingGreen" @click="changeGrade('gradingGreen')" type="button" value="">
+        <input id="gradingGreen" type="text" value="" readonly>
       </div>
       <div>
-        <input id="gradingYellow" @click="changeGrade('gradingYellow')" type="button" value="">
+        <input id="gradingYellow" type="text" value="" readonly>
       </div>
       <div>
-        <input id="gradingOrange" @click="changeGrade('gradingOrange')" type="button" value="">
+        <input id="gradingOrange" type="text" value="" readonly>
       </div>
       <div>
-        <input id="gradingRed" @click="changeGrade('gradingRed')" type="button" value="">
+        <input id="gradingRed" type="text" value="" readonly>
       </div>
     </div>
-    <p>{{timeSincelastGrading}} seconds ago
+    <p>{{timeSincelastGrading}} 
   </div>
 </main>
 <script src="js/receptionVue.js"></script>
