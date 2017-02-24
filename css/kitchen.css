@@ -1,0 +1,68 @@
+body {
+  background-color: #4D4646;
+  color:white;
+}
+
+h1 {
+  font-size: 400%;
+  margin-top: 0%;
+}
+
+.button {
+  font-size: 20px;
+  width: 15%;
+  padding: 2%;
+  box-sizing: border-box;
+  position: absolute;
+  border-radius: 8px;
+}
+
+#startpagebutton {
+  background-color: white;
+  color:black;
+  font-weight:bold;
+  top: 2%;
+  right:2%;
+}
+
+#gradingDiv {
+    margin: -3% 0 0 20%;
+}
+
+#gradingContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 50px;
+  width: 20%;
+  justify-content: space-between;
+}
+
+#gradingContainer div {
+  flex-basis: 24%;
+  height: 100%;
+
+}
+#gradingContainer input{
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  color: white;
+  line-height: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+#gradingGreen  {
+  background-color: #01DF01;
+}
+
+#gradingYellow  {
+  background-color: #FFFF00;
+}
+
+#gradingOrange  {
+  background-color: #FF8000;
+}
+
+#gradingRed  {
+  background-color: #DF0101;
+}
