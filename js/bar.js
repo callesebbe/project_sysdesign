@@ -72,15 +72,13 @@ var app = new Vue({
       this.todos = []
     },
 
-    reviewOrder: function() {
-      if (temp > 0){
-      this.todos.push(this.count + "x " + this.name + ": " + this.allergicheck()),
-      temp = 0,
+    reviewOrder: function(index) {
+      this.todos.splice(index, 1),
       this.show2 = false,
       this.uncheckallergi(),
-      orderItems = [],
-      this.WB = false
-      }
+      this.WB = false,
+      this.listcount -= 1
+
   },
 
     allergicheck: function () {

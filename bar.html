@@ -60,7 +60,7 @@
     v-bind:count ="todo.count"
     v-bind:allerg ="todo.orderItems"
     v-bind:id="index"
-    v-on:remove="todos.splice(index, 1)"
+    v-on:remove="reviewOrder(index)"
     ></li>
 
   </ul>
