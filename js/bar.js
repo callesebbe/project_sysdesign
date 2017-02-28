@@ -25,6 +25,7 @@ var app = new Vue({
     grade: '',
     lastGrading: 0,
     timeSincelastGrading: 0,
+    tablechoice: false,
 
     todos: [
     ]
@@ -65,6 +66,7 @@ var app = new Vue({
 
     },*/
     sendOrder: function() {
+      this.tablechoice = true,
       this.show2 = false,
       this.count = 1,
       this.temp = 0,
