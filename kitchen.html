@@ -16,6 +16,14 @@
         <button @click="goToPage('index.html')" class="button" id="startpagebutton" type="submit">Start Page</button>
       </div>
       <div id="orderDivs">
+        <div
+          is="order-div"
+          v-for="(order, index) in orders"
+          v-bind:name="order.name"
+          v-bind:count="order.count"
+          v-bind:allerg="order.orderItems"
+          v-on:remove="todos.splice(index, 1)"
+          ></div>
       </div>
       <div id="gradingDiv">
         <div id ="gradingContainer">
