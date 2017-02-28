@@ -1,12 +1,10 @@
 Vue.component('order-div', {
   template: '\
     <div class="order">\
-    {{name}} \
-    x{{count}} \
-    {{allerg[0]}} {{allerg[1]}} {{allerg[2]}} {{allerg[3]}} \
+    <li v-for="o in order">o.typee</order> \
     </div>\
   ',
-  props: ['name','count','allerg']
+  props: ['order']
 })
 var app = new Vue({
   el: '#app',
@@ -18,27 +16,29 @@ var app = new Vue({
     lastGrading: 0,
     timeSincelastGrading: 0,
       
-    orders: [
+    ordersInKitchen: [
       
     ]
   },
   methods: {
 
     loadOrders: function(){
-        
-       
-      // if(localStorage.getItem("isNewOrder")){ 
            
-
-            var orderList = JSON.parse(localStorage.getItem("orderList")) 
-
-            for(order in orderList){
-                this.orders.push(orderList[order]);
-            }
-        localStorage.setItem("isNewOrder",false);
         
-            
+        
+        this.ordersInKitchen = JSON.parse(localStorage.getItem("ordersInKitchen"));
+          
+        var orderList = JSON.parse(localStorage.getItem("orderList")); 
+        
+        
+        if(orderList !== null){
+             this.ordersInKitchen.push(orderList);
+        }
+        
+        localStorage.setItem("ordersInKitchen", JSON.stringify(this.ordersInKitchen));
         localStorage.removeItem("orderList");
+            
+        
      //  }
     } , 
       
@@ -80,6 +80,6 @@ var app = new Vue({
 })
 
 
-window.setInterval(app.loadOrders,1000);
+window.setInterval(app.loadOrders,10000);
 app.load();
 window.setInterval( app.updateGrading, 1000);
