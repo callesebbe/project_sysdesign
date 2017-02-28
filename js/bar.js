@@ -7,7 +7,7 @@ Vue.component('todo-item', {
       <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
     </li>\
   ',
-  props: ['title','count','allerg','id']
+  props: ['title','count','allerg','id',]
 })
 var orderItems = [];
 
@@ -27,7 +27,12 @@ var app = new Vue({
     timeSincelastGrading: 0,
     listOfTodos: [],
     todos: []
-  },
+    tablechoice: false,
+    coun: "",
+    tablenr: "",
+    id: 1,
+
+     },
   methods: {
     decrement: function () {
           this.todos[this.listcount -1 ].count -= 1;
@@ -38,7 +43,9 @@ var app = new Vue({
       this.count += 1
     },
     placeOrder: function(typee) {
+
      var typ = {typee};
+     typ.id = this.id,
      this.listcount += 1,
      this.WB = true,
      this.count = 1,
@@ -64,14 +71,22 @@ var app = new Vue({
 
     },*/
     sendOrder: function() {
+<<<<<<< HEAD
       this.listOfTodos.push(this.todos);
       localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
 
+=======
+      if(this.listcount == 0) {
+      }
+      else {
+      this.tablechoice = true,
+>>>>>>> origin/barchange
       this.show2 = false,
       this.count = 1,
       this.temp = 0,
-      this.WB = false,
-      this.todos = []
+      this.WB = false
+    }
+
     },
 
     reviewOrder: function(index) {
@@ -82,6 +97,24 @@ var app = new Vue({
       this.listcount -= 1
 
   },
+
+    addtablenr: function(coun) {
+      this.tablenr = coun;
+      if (this.tablenr.length == 0){
+      }
+      else {
+      this.id += 1;
+      for (var i = 0; i < this.listcount; i++) {
+        this.todos[i].tablenr = this.tablenr;
+        this.todos[i].id = this.id;
+      }
+      this.coun = "",
+      this.tablechoice = false,
+      this.todos = [],
+      this.listcount = 0
+    };
+
+    },
 
     allergicheck: function () {
     var orderItems = [].filter.call(document.getElementsByName('order[]'),
