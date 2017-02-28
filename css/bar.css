@@ -39,14 +39,26 @@ button:hover {
 
 #listbox {
   position: absolute;
-  top:20%;
+  top:15%;
   right:2%;
   text-align: left;
+  width:20%;
+  padding:0;
+  max-height: 60%;
+  overflow:hidden;
+  
 }
 
 
 
+#listbox li {
+  padding: 1%;
+  border-radius: 5px;
+  border: 1px solid white;
+  margin-top: 1%;
+  width: 90%;
 
+}
 
 #konstigDivUtanNamn {
   width: 10%;

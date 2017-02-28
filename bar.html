@@ -52,12 +52,14 @@
 
 
   <div id="listbox" >
-  <ul>
+    <h3 style ="padding:0; margin:0;">Meals:</h3>
+  <ul style="list-style-type:none; padding:0;margin:0;">
     <li is="todo-item"
     v-for="(todo, index) in todos"
     v-bind:title ="todo.typee"
     v-bind:count ="todo.count"
     v-bind:allerg ="todo.orderItems"
+    v-bind:id="index"
     v-on:remove="todos.splice(index, 1)"
     ></li>
 

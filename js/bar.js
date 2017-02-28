@@ -1,11 +1,13 @@
 Vue.component('todo-item', {
   template: '\
     <li>\
-      {{ count }}x {{ title }}  {{ allerg[0] }} {{allerg[1]}} {{allerg[2]}} {{allerg[3]}} \
-      <button v-on:click="$emit(\'remove\')">X</button>\
+      <p style="font-weight:bold">OrderNR: #{{ id }}</p>  \
+      {{ count }}x{{ title }} \
+      <p style="color:red">{{ allerg[0] }}, {{allerg[1]}}, {{allerg[2]}}, {{allerg[3]}}</p> \
+      <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
     </li>\
   ',
-  props: ['title','count','allerg']
+  props: ['title','count','allerg','id']
 })
 var orderItems = [];
 
