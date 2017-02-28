@@ -45,9 +45,6 @@
   <div>
     <button v-on:click="sendOrder" class="button" id="sendorderbutton" type="submit">Send Order</button>
   </div>
-  <div id="konstigDivUtanNamn">
-    <button v-on:click="reviewOrder" id="regretbutton" type="submit">Review Order</button>
-  </div>
 
 
 
@@ -59,7 +56,7 @@
     v-bind:title ="todo.typee"
     v-bind:count ="todo.count"
     v-bind:allerg ="todo.orderItems"
-    v-bind:id="index"
+    v-bind:id="todo.id"
     v-on:remove="reviewOrder(index)"
     ></li>
 
@@ -76,7 +73,7 @@
 
   </div>
   <div id="gradingDiv">
-    <h3 style="margin-bottom: 1%">How occupied is the restaurant?</h3>
+    <h3 style="margin-top: 30%">How occupied is the restaurant?</h3>
     <div id ="gradingContainer">
       <div>
         <input id="gradingGreen" @click="changeGrade('gradingGreen')" type="button" value="">
@@ -94,7 +91,7 @@
     <p> {{timeSincelastGrading}}
     </div>
   <div id="amount" v-show="show2">
-    <h3 style="margin-bottom:1%">Quantity: </h3>
+    <h3 style="margin-top:-2%">Quantity: </h3>
       <p id="amountdisplay" >
         {{ count }}
       </p>
@@ -102,21 +99,24 @@
       <button id="incr" v-on:click="increment">+</button>
   </div>
   <div id="container" v-show="tablechoice" v-cloak>
+    <p id="tabletext">Table number: {{ coun}}</p>
       <ul id="keyboard">
-          <li class="letter">1</li>
-          <li class="letter">2</li>
-          <li class="letter">3</li>
-          <li class="letter clearl">4</li>
-          <li class="letter">5</li>
-          <li class="letter">6</li>
+          <li v-on:click="coun = coun + '1'" class="letter" type="button" >1</li>
+          <li v-on:click="coun = coun + '2'" class="letter">2</li>
+          <li v-on:click="coun = coun + '3'" class="letter">3</li>
+          <li v-on:click="coun = coun + '4'" class="letter clearl">4</li>
+          <li v-on:click="coun = coun + '5'" class="letter">5</li>
+          <li v-on:click="coun = coun + '6'" class="letter">6</li>
 
-          <li class="letter clearl">7</li>
-          <li class="letter ">8</li>
-          <li class="letter">9</li>
-          <li class="letter clearl">0</li>
-           <li class="return">retur</li>
-           <li class="delete lastitem"><</li>
+          <li v-on:click="coun = coun + '7'" class="letter clearl">7</li>
+          <li v-on:click="coun = coun + '8'" class="letter ">8</li>
+          <li v-on:click="coun = coun + '9'" class="letter">9</li>
+          <li v-on:click="coun = coun.slice(0,-1)" class="delete lastitem clearl"><</li>
+          <li v-on:click="coun = coun + '0'" class="letter">0</li>
+          <li v-on:click="addtablenr(coun)" class="return">retur</li>
+
       </ul>
+
   </div>
 </div>
 </main>

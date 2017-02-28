@@ -200,12 +200,27 @@ td {
   background-color: #DF0101;
 }
 
+#tabletext {
+  color: white;
+}
+
 #container {
+position: absolute;
+top:22%;
+right: 22%;
+
+border-radius: 5px;
+padding-left: 5px;
+text-align: center;
+border: solid blue;
+background-color: black;
 margin: 100px auto;
-width: 760px;
+height: 320px;
+width: 201px;
 color: black;
 }
 #keyboard {
+background-color: black;
 margin: 0;
 padding: 0;
 list-style: none;
@@ -226,16 +241,16 @@ list-style: none;
         clear: left;
         }
             #keyboard .tab, #keyboard .delete {
-            width: 70px;
+            width: 60px;
             }
             #keyboard .capslock {
             width: 80px;
             }
             #keyboard .return {
-            width: 90px;
+            width: 60px;
             }
             #keyboard .left-shift{
-            width: 70px;
+            width: 60px;
             }
 
             #keyboard .switch {
