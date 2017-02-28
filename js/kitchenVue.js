@@ -19,22 +19,19 @@ var app = new Vue({
     grade: '',
     lastGrading: 0,
     timeSincelastGrading: 0,
-
-    orders: [
-
+    ordersInKitchen: [
     ]
   },
   methods: {
 
     loadOrders: function(){
-      // if(localStorage.getItem("isNewOrder")){
-      var orderList = JSON.parse(localStorage.getItem("orderList"))
-      for(order in orderList){
-        this.orders.push(orderList[order]);
+      this.ordersInKitchen = JSON.parse(localStorage.getItem("ordersInKitchen"));
+      var orderList = JSON.parse(localStorage.getItem("orderList"));
+      if(orderList !== null){
+        this.ordersInKitchen.push(orderList);
       }
-      console.log(orderList);
+      localStorage.setItem("ordersInKitchen", JSON.stringify(this.ordersInKitchen));
       localStorage.removeItem("orderList");
-     //  }
     } ,
 
     goToPage: function(url) {
@@ -75,6 +72,6 @@ var app = new Vue({
 })
 
 
-window.setInterval(app.loadOrders,1000);
+window.setInterval(app.loadOrders,10000);
 app.load();
 window.setInterval( app.updateGrading, 1000);

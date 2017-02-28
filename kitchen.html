@@ -18,8 +18,7 @@
       <div id="orderDivs">
         <div
           is="order-div"
-          v-for="o in orders"
-          v-bind:order="o"
+          v-bind:order="ordersInKitchen"
           v-on:remove="todos.splice(index, 1)"
           ></div>
       </div>
