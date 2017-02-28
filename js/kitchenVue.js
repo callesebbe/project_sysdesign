@@ -8,9 +8,14 @@ Vue.component('order-div', {
     </li> \
     </button> \
   ',
-
+ methods: {
+    orderOperation: function() {
+        alert(this);
+    }
+              },
   props: ['order']
-})
+ })
+              
 var app = new Vue({
   el: '#app',
   data: {
@@ -23,8 +28,8 @@ var app = new Vue({
     ordersInKitchen: []
   },
   methods: {
-    orderOperation: function(id) {
-
+    orderOperation: function() {
+        alert(this);
     },
     loadOrders: function(){
       //localStorage.setItem("ordersInKitchen", JSON.stringify(this.ordersInKitchen));

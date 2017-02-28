@@ -26,7 +26,7 @@ var app = new Vue({
     lastGrading: 0,
     timeSincelastGrading: 0,
     listOfTodos: [],
-    todos: []
+    todos: [],
     tablechoice: false,
     coun: "",
     tablenr: "",
@@ -71,16 +71,16 @@ var app = new Vue({
 
     },*/
     sendOrder: function() {
-<<<<<<< HEAD
+
       this.listOfTodos.push(this.todos);
       localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
 
-=======
+
       if(this.listcount == 0) {
       }
       else {
       this.tablechoice = true,
->>>>>>> origin/barchange
+
       this.show2 = false,
       this.count = 1,
       this.temp = 0,
