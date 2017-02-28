@@ -1,11 +1,13 @@
 Vue.component('todo-item', {
   template: '\
     <li>\
-      {{ title }}\
-      <button v-on:click="$emit(\'remove\')">X</button>\
+      <p style="font-weight:bold">OrderNR: #{{ id }}</p>  \
+      {{ count }}x{{ title }} \
+      <p style="color:red">{{ allerg[0] }}, {{allerg[1]}}, {{allerg[2]}}, {{allerg[3]}}</p> \
+      <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
     </li>\
   ',
-  props: ['title']
+  props: ['title','count','allerg','id']
 })
 var orderItems = [];
 
@@ -16,6 +18,7 @@ var app = new Vue({
     show2 :false,
     show : true,
     count : 1,
+    listcount: 0,
     name : '',
     WB : false,
     ischecked : false,
@@ -28,12 +31,26 @@ var app = new Vue({
   },
   methods: {
     decrement: function () {
+          this.todos[this.listcount -1 ].count -= 1;
       this.count -= 1
     },
     increment: function() {
+          this.todos[this.listcount -1].count += 1;
       this.count += 1
     },
     placeOrder: function(typee) {
+     var typ = {typee};
+     this.listcount += 1,
+     this.WB = true,
+     this.count = 1,
+     this.show2 = true,
+     typ.orderItems = [],
+     typ.count = this.count,
+     this.name = typee,
+     this.uncheckallergi(),
+     this.todos.push(typ)
+   },
+    /*placeOrder: function(typee) {
       if (temp > 0){
 
       this.todos.push(this.count + "x " + this.name + ": " + this.allergicheck())
@@ -46,7 +63,7 @@ var app = new Vue({
       orderItems = [],
       this.name = typee
 
-    },
+    },*/
     sendOrder: function() {
       this.show2 = false,
       this.count = 1,
@@ -59,25 +76,41 @@ var app = new Vue({
       if (temp > 0){
       this.todos.push(this.count + "x " + this.name + ": " + this.allergicheck()),
       temp = 0,
-
       this.show2 = false,
       this.uncheckallergi(),
       orderItems = [],
       this.WB = false
       }
   },
-  allergicheck: function () {
+
+    allergicheck: function () {
+    var orderItems = [].filter.call(document.getElementsByName('order[]'),
+    function(i) {
+      return i.checked;
+    }
+  ).map(function(i) {
+    return i.value;
+    });
+
+    this.todos[this.listcount-1].orderItems = orderItems;
+
+  },
+/*  allergicheck: function () {
     var orderItems = [].filter.call(document.getElementsByName('order[]'), function(i) {
       return i.checked;
     }).map(function(i) {
       return i.value;
     });
     return orderItems
-  },
+  },*/
   uncheckallergi: function () {
-    this.ischecked = false
-
-
+    var checkboxes = new Array();
+    checkboxes = document.getElementsByName('order[]');
+    for (var i=0; i<checkboxes.length; i++)  {
+      if (checkboxes[i].type == 'checkbox')   {
+        checkboxes[i].checked = false;
+      }
+    }
   },
   goToPage: function(url) {
     localStorage.setItem( "grade", this.grade);

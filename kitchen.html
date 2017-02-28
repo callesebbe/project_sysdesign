@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+     <head>
+         <script src="https://unpkg.com/vue/dist/vue.js"></script>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title>Kitchen </title>
+         <link rel="stylesheet" type="text/css" href="css/kitchen.css">
+    </head>
+
+    <body>
+      <main>
+        <div id="bar" ><h1>Kitchen</h1></div>
+        <div id="app">
+      <div>
+        <button @click="goToPage('index.html')" class="button" id="startpagebutton" type="submit">Start Page</button>
+      </div>
+      <div id="orderDivs">
+        <div
+          is="order-div"
+          v-for="(order, index) in orders"
+          v-bind:name="order.name"
+          v-bind:count="order.count"
+          v-bind:allerg="order.orderItems"
+          v-on:remove="todos.splice(index, 1)"
+          ></div>
+      </div>
+      <div id="gradingDiv">
+        <div id ="gradingContainer">
+          <div>
+            <input id="gradingGreen" @click="changeGrade('gradingGreen')" type="button" value="">
+          </div>
+          <div>
+            <input id="gradingYellow" @click="changeGrade('gradingYellow')" type="button" value="">
+          </div>
+          <div>
+            <input id="gradingOrange" @click="changeGrade('gradingOrange')" type="button" value="">
+          </div>
+          <div>
+            <input id="gradingRed" @click="changeGrade('gradingRed')" type="button" value="">
+          </div>
+        </div>
+        <p> {{timeSincelastGrading}} seconds ago
+      </div>
+    </div>
+    </div>
+    </main>
+    <script src="js/kitchenVue.js"></script>
+    </body>
+</html>
