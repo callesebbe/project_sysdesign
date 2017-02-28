@@ -65,6 +65,9 @@ var app = new Vue({
 
     },*/
     sendOrder: function() {
+        
+      localStorage.setItem("orderList", JSON.stringify(this.todos));
+        
       this.show2 = false,
       this.count = 1,
       this.temp = 0,

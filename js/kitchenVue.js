@@ -17,21 +17,31 @@ var app = new Vue({
     grade: '',
     lastGrading: 0,
     timeSincelastGrading: 0,
+      
     orders: [
-       {
-        name: 'Wallenbergare',
-        count: 2,
-        orderItems: ['utan lök', 'med bacon']
-      },
-      {
-       name: 'andreas tacos',
-       count: 3,
-       orderItems: ['utan lök', 'med bacon']
-     }
+      
     ]
   },
   methods: {
 
+    loadOrders: function(){
+        
+       
+      // if(localStorage.getItem("isNewOrder")){ 
+           
+
+            var orderList = JSON.parse(localStorage.getItem("orderList")) 
+
+            for(order in orderList){
+                this.orders.push(orderList[order]);
+            }
+        localStorage.setItem("isNewOrder",false);
+        
+            
+        localStorage.removeItem("orderList");
+     //  }
+    } , 
+      
     goToPage: function(url) {
       localStorage.setItem( "grade", this.grade);
       localStorage.setItem( "lastGrading", this.lastGrading);
@@ -69,5 +79,7 @@ var app = new Vue({
   }
 })
 
+
+window.setInterval(app.loadOrders,1000);
 app.load();
 window.setInterval( app.updateGrading, 1000);
