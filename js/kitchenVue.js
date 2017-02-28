@@ -1,12 +1,14 @@
 Vue.component('order-div', {
   template: '\
     <div class="order">\
-    {{name}} \
-    x{{count}} \
-    {{allerg[0]}} {{allerg[1]}} {{allerg[2]}} {{allerg[3]}} \
+    <li v-for="o in order">{{o.count}}x{{o.typee}} \
+    <ul> \
+    <li v-for="a in o.orderItems">{{a}}</li> \
+    </ul>\
+    </li> \
     </div>\
   ',
-  props: ['name','count','allerg']
+  props: ['order']
 })
 var app = new Vue({
   el: '#app',
@@ -17,31 +19,24 @@ var app = new Vue({
     grade: '',
     lastGrading: 0,
     timeSincelastGrading: 0,
-      
+
     orders: [
-      
+
     ]
   },
   methods: {
 
     loadOrders: function(){
-        
-       
-      // if(localStorage.getItem("isNewOrder")){ 
-           
-
-            var orderList = JSON.parse(localStorage.getItem("orderList")) 
-
-            for(order in orderList){
-                this.orders.push(orderList[order]);
-            }
-        localStorage.setItem("isNewOrder",false);
-        
-            
-        localStorage.removeItem("orderList");
+      // if(localStorage.getItem("isNewOrder")){
+      var orderList = JSON.parse(localStorage.getItem("orderList"))
+      for(order in orderList){
+        this.orders.push(orderList[order]);
+      }
+      console.log(orderList);
+      localStorage.removeItem("orderList");
      //  }
-    } , 
-      
+    } ,
+
     goToPage: function(url) {
       localStorage.setItem( "grade", this.grade);
       localStorage.setItem( "lastGrading", this.lastGrading);
