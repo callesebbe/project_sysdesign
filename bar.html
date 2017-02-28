@@ -45,36 +45,35 @@
   <div>
     <button v-on:click="sendOrder" class="button" id="sendorderbutton" type="submit">Send Order</button>
   </div>
-  <div id="konstigDivUtanNamn">
-    <button v-on:click="reviewOrder" id="regretbutton" type="submit">Review Order</button>
-  </div>
 
 
 
   <div id="listbox" >
-  <ul>
-    <li
-      is="todo-item"
-      v-for="(todo, index) in todos"
-      v-bind:title="todo"
-      v-on:remove="todos.splice(index, 1)"
-      v-model:
+    <h3 style ="padding:0; margin:0;">Meals:</h3>
+  <ul style="list-style-type:none; padding:0;margin:0;">
+    <li is="todo-item"
+    v-for="(todo, index) in todos"
+    v-bind:title ="todo.typee"
+    v-bind:count ="todo.count"
+    v-bind:allerg ="todo.orderItems"
+    v-bind:id="todo.id"
+    v-on:remove="reviewOrder(index)"
     ></li>
+
   </ul>
 </div>
 <div class="allergibox" v-show="WB">
 <form action="">
-  <input id="extra bacon" type="checkbox" name="order[]" value="extra bacon" v-bind:checked="ischecked"> Extra bacon
-  <br><br><input id="lök" type="checkbox" name="order[]" value="utan lök" v-bind:checked="ischecked"> Utan lök
-  <br><br><input id="gluten" type="checkbox" name="order[]" value="glutenfri" v-bind:checked="ischecked"> Glutenfri
-  <br><br><input id="laktos" type="checkbox" name="order[]" value="laktosfri" v-bind:checked="ischecked"> Laktosfri
-
+  <input id="extra bacon" type="checkbox" name="order[]" value="extra bacon"  v-on:click="allergicheck"> Extra bacon
+ <br><br><input id="lök" type="checkbox" name="order[]" value="utan lök"  v-on:click="allergicheck"> Utan lök
+ <br><br><input id="gluten" type="checkbox" name="order[]" value="glutenfri"  v-on:click="allergicheck"> Glutenfri
+ <br><br><input id="laktos" type="checkbox" name="order[]" value="laktosfri"  v-on:click="allergicheck"> Laktosfri
 
 </form>
 
   </div>
   <div id="gradingDiv">
-    <h3 style="margin-bottom: 1%">How occupied is the restaurant?</h3>
+    <h3 style="margin-top: 30%">How occupied is the restaurant?</h3>
     <div id ="gradingContainer">
       <div>
         <input id="gradingGreen" @click="changeGrade('gradingGreen')" type="button" value="">
@@ -92,14 +91,33 @@
     <p> {{timeSincelastGrading}}
     </div>
   <div id="amount" v-show="show2">
-    <h3 style="margin-bottom:1%">Quantity: </h3>
+    <h3 style="margin-top:-2%">Quantity: </h3>
       <p id="amountdisplay" >
         {{ count }}
       </p>
       <button id="decr" v-on:click="decrement">-</button>
       <button id="incr" v-on:click="increment">+</button>
   </div>
+  <div id="container" v-show="tablechoice" v-cloak>
+    <p id="tabletext">Table number: {{ coun}}</p>
+      <ul id="keyboard">
+          <li v-on:click="coun = coun + '1'" class="letter" type="button" >1</li>
+          <li v-on:click="coun = coun + '2'" class="letter">2</li>
+          <li v-on:click="coun = coun + '3'" class="letter">3</li>
+          <li v-on:click="coun = coun + '4'" class="letter clearl">4</li>
+          <li v-on:click="coun = coun + '5'" class="letter">5</li>
+          <li v-on:click="coun = coun + '6'" class="letter">6</li>
 
+          <li v-on:click="coun = coun + '7'" class="letter clearl">7</li>
+          <li v-on:click="coun = coun + '8'" class="letter ">8</li>
+          <li v-on:click="coun = coun + '9'" class="letter">9</li>
+          <li v-on:click="coun = coun.slice(0,-1)" class="delete lastitem clearl"><</li>
+          <li v-on:click="coun = coun + '0'" class="letter">0</li>
+          <li v-on:click="addtablenr(coun)" class="return">retur</li>
+
+      </ul>
+
+  </div>
 </div>
 </main>
 <script src="js/bar.js"></script>
