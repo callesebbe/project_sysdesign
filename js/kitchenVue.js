@@ -1,40 +1,43 @@
+Vue.component('order-div', {
+  template: '\
+    <div class="order">\
+    {{name}} \
+    x{{count}} \
+    {{allerg[0]}} {{allerg[1]}} {{allerg[2]}} {{allerg[3]}} \
+    </div>\
+  ',
+  props: ['name','count','allerg']
+})
 var app = new Vue({
   el: '#app',
   data: {
+    name: '',
+    count: 0,
+    orderitems: [],
     grade: '',
     lastGrading: 0,
-    timeSincelastGrading: 0
+    timeSincelastGrading: 0,
+    orders: [
+       {
+        name: 'Wallenbergare',
+        count: 2,
+        orderItems: ['utan lök', 'med bacon']
+      },
+      {
+       name: 'andreas tacos',
+       count: 3,
+       orderItems: ['utan lök', 'med bacon']
+     }
+    ]
   },
   methods: {
-    outputOrders: function() {
-      var parentDiv = document.getElementById('orderDivs');
-      var h = true;
-      var u = 0;
-      while(h && u < 8) {
-        var childDiv = document.createElement('div');
-        var orderList = document.createElement('ul');
-        var li = document.createElement('li');
-        li.innerHTML += 'Vegburgare';
-        orderList.appendChild(li);
-        var li = document.createElement('li');
-        li.innerHTML += 'Kokain';
-        orderList.appendChild(li);
-        childDiv.innerHTML += 'Order #'+u;
-        childDiv.className = 'order';
 
-        childDiv.appendChild(orderList);
-        parentDiv.appendChild(childDiv);
-        ++u;
-      }
-    },
     goToPage: function(url) {
       localStorage.setItem( "grade", this.grade);
       localStorage.setItem( "lastGrading", this.lastGrading);
-
       window.location= url;
     },
     changeGrade: function(color) {
-
       document.getElementById('gradingGreen').value = "";
       document.getElementById('gradingYellow').value = "";
       document.getElementById('gradingOrange').value = "";
@@ -65,6 +68,6 @@ var app = new Vue({
     }
   }
 })
-app.outputOrders();
+
 app.load();
 window.setInterval( app.updateGrading, 1000);
