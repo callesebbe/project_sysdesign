@@ -25,9 +25,8 @@ var app = new Vue({
     grade: '',
     lastGrading: 0,
     timeSincelastGrading: 0,
-
-    todos: [
-    ]
+    listOfTodos: [],
+    todos: []
   },
   methods: {
     decrement: function () {
@@ -65,9 +64,9 @@ var app = new Vue({
 
     },*/
     sendOrder: function() {
-        
-      localStorage.setItem("orderList", JSON.stringify(this.todos));
-        
+      this.listOfTodos.push(this.todos);
+      localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
+
       this.show2 = false,
       this.count = 1,
       this.temp = 0,

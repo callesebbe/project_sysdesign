@@ -1,13 +1,14 @@
 Vue.component('order-div', {
   template: '\
-    <div class="order">\
+  <button class="order" @click="orderOperation()"> \
     <li v-for="o in order">{{o.count}}x{{o.typee}} \
     <ul> \
-    <li v-for="a in o.orderItems">{{a}}</li> \
+    <li style="list-style-type:none" v-for="a in o.orderItems">- {{a}}</li> \
     </ul>\
     </li> \
-    </div>\
+    </button> \
   ',
+
   props: ['order']
 })
 var app = new Vue({
@@ -19,16 +20,20 @@ var app = new Vue({
     grade: '',
     lastGrading: 0,
     timeSincelastGrading: 0,
-    ordersInKitchen: [
-    ]
+    ordersInKitchen: []
   },
   methods: {
+    orderOperation: function(id) {
 
+    },
     loadOrders: function(){
+      //localStorage.setItem("ordersInKitchen", JSON.stringify(this.ordersInKitchen));
       this.ordersInKitchen = JSON.parse(localStorage.getItem("ordersInKitchen"));
       var orderList = JSON.parse(localStorage.getItem("orderList"));
       if(orderList !== null){
-        this.ordersInKitchen.push(orderList);
+        for(order in orderList) {
+        this.ordersInKitchen.push(orderList[order]);
+        }
       }
       localStorage.setItem("ordersInKitchen", JSON.stringify(this.ordersInKitchen));
       localStorage.removeItem("orderList");
@@ -72,6 +77,6 @@ var app = new Vue({
 })
 
 
-window.setInterval(app.loadOrders,10000);
+window.setInterval(app.loadOrders,1000);
 app.load();
 window.setInterval( app.updateGrading, 1000);
