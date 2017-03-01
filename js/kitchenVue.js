@@ -1,23 +1,33 @@
 Vue.component('order-div', {
   template: '\
-  <button :class="this.class" @click="orderOperation()"> \
+  <button @load="load()" :class="this.class" @click="orderOperation()"> \
   <p v-for="(o,index) in order" v-if="index<1">#{{o.id}} Tablenr:{{o.tablenr}}</p>\
     <li v-for="o in order">{{o.count}}x{{o.typee}}  \
     <ul> \
     <li style="list-style-type:none" v-for="a in o.orderItems">- {{a}}</li> \
     </ul>\
     </li> \
-    </button> \
+    </button>\
   ',
  methods: {
+   load: function() {
+     if (localStorage.getItem("ordersInKitchenClaimedClass") == null) {
+       this.class = 'order';
+       this.claim = false;
+     }
+   },
    orderOperation: function() {
      if(this.claim == false) {
       this.claim = true;
       this.class = 'orderClaimed';
+      localStorage.setItem("ordersInKitchenClaimedClaim", this.claim);
+      localStorage.setItem("ordersInKitchenClaimedClass", this.class);
 
     }else {
       this.claim = false;
       this.class = 'order';
+      localStorage.setItem("ordersInKitchenClaimedClaim", this.claim);
+      localStorage.setItem("ordersInKitchenClaimedClass", this.class);
 
     }
 
@@ -25,8 +35,8 @@ Vue.component('order-div', {
   },
   data: function () {
     return {
-      claim: false,
-      class: 'order'
+      claim: localStorage.getItem("ordersInKitchenClaimedClaim"),
+      class: localStorage.getItem("ordersInKitchenClaimedClass")
     }
   },
   props: ['order']
@@ -44,6 +54,7 @@ var app = new Vue({
     ordersInKitchen: []
   },
   methods: {
+
 
     loadOrders: function(){
       if (JSON.parse(localStorage.getItem("ordersInKitchen")) == null) {
@@ -63,6 +74,7 @@ var app = new Vue({
     goToPage: function(url) {
       localStorage.setItem( "grade", this.grade);
       localStorage.setItem( "lastGrading", this.lastGrading);
+
       window.location= url;
     },
     changeGrade: function(color) {
@@ -97,7 +109,7 @@ var app = new Vue({
   }
 })
 
-
+//window.setInterval(app.saveOrders,1000);
 window.setInterval(app.loadOrders,1000);
 app.load();
 window.setInterval( app.updateGrading, 1000);
