@@ -1,6 +1,6 @@
 Vue.component('order-div', {
   template: '\
-  <button @load="load()" :class="this.class" @click="orderOperation()"> \
+  <button  :class="order[0].class" @click="orderOperation(order)"> \
   <p v-for="(o,index) in order" v-if="index<1">#{{o.id}} Tablenr:{{o.tablenr}}</p>\
     <li v-for="o in order">{{o.count}}x{{o.typee}}  \
     <ul> \
@@ -10,35 +10,18 @@ Vue.component('order-div', {
     </button>\
   ',
  methods: {
-   load: function() {
-     if (localStorage.getItem("ordersInKitchenClaimedClass") == null) {
-       this.class = 'order';
-       this.claim = false;
-     }
-   },
-   orderOperation: function() {
-     if(this.claim == false) {
-      this.claim = true;
-      this.class = 'orderClaimed';
-      localStorage.setItem("ordersInKitchenClaimedClaim", this.claim);
-      localStorage.setItem("ordersInKitchenClaimedClass", this.class);
-
+   orderOperation: function(order) {
+     if(order[0].claim == false) {
+      order[0].claim = true;
+      order[0].class = 'orderClaimed';
+      localStorage.setItem("ordersInKitchen", JSON.stringify(app.ordersInKitchen));
     }else {
-      this.claim = false;
-      this.class = 'order';
-      localStorage.setItem("ordersInKitchenClaimedClaim", this.claim);
-      localStorage.setItem("ordersInKitchenClaimedClass", this.class);
-
+      order[0].claim = false;
+      order[0].class = 'order';
+      localStorage.setItem("ordersInKitchen", JSON.stringify(app.ordersInKitchen));
     }
-
   }
-  },
-  data: function () {
-    return {
-      claim: localStorage.getItem("ordersInKitchenClaimedClaim"),
-      class: localStorage.getItem("ordersInKitchenClaimedClass")
-    }
-  },
+},
   props: ['order']
  })
 

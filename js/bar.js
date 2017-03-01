@@ -95,6 +95,7 @@ var app = new Vue({
 
     addtablenr: function(coun) {
       this.tablenr = coun;
+      this.id = parseInt(localStorage.getItem("orderID"));
       if (this.tablenr.length == 0){
       }
       else {
@@ -102,6 +103,8 @@ var app = new Vue({
       for (var i = 0; i < this.listcount; i++) {
         this.todos[i].tablenr = this.tablenr;
         this.todos[i].id = this.id;
+        this.todos[i].claim = false;
+        this.todos[i].class = 'order';
       }
       this.coun = "",
       this.tablechoice = false,
@@ -146,7 +149,7 @@ var app = new Vue({
   goToPage: function(url) {
     localStorage.setItem( "grade", this.grade);
     localStorage.setItem( "lastGrading", this.lastGrading);
-
+    localStorage.setItem("orderID",this.id);
     window.location= url;
   },
   changeGrade: function(color) {
@@ -177,9 +180,16 @@ var app = new Vue({
   },
 
   load: function() {
-    this.grade = localStorage.getItem("grade");
+    if(localStorage.getItem("grade") == null) {
+      this.grade = 'gradingGreen';
+    }else {
+    this.grade = localStorage.getItem("grade")
+    }
+    if(localStorage.getItem("lastGrading") == null) {
+      this.lastGrading = 0;
+    }else {
     this.lastGrading = localStorage.getItem("lastGrading");
-
+    }
     document.getElementById(this.grade).value = "X";
 
     this.updateGrading();
