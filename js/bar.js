@@ -75,16 +75,11 @@ var app = new Vue({
       if(this.listcount == 0) {
       }
       else {
-      this.tablechoice = true,
-
+      this.tablechoice = true
       this.show2 = false,
       this.count = 1,
       this.temp = 0,
-      this.listOfTodos.push(this.todos);
-      localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
-
       this.WB = false
-
     }
 
     },
@@ -110,8 +105,11 @@ var app = new Vue({
       }
       this.coun = "",
       this.tablechoice = false,
-      this.todos = [],
-      this.listcount = 0
+      this.listcount = 0,
+      this.listOfTodos.push(this.todos);
+      localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
+      this.todos = []
+
     };
 
     },

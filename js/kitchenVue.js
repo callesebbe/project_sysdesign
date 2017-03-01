@@ -1,7 +1,7 @@
 Vue.component('order-div', {
   template: '\
   <button :class="this.class" @click="orderOperation()"> \
-  <p>{{order.tablenr}}</p>\
+  <p v-for="(o,index) in order" v-if="index<1">#{{o.id}} Tablenr:{{o.tablenr}}</p>\
     <li v-for="o in order">{{o.count}}x{{o.typee}}  \
     <ul> \
     <li style="list-style-type:none" v-for="a in o.orderItems">- {{a}}</li> \
@@ -46,7 +46,9 @@ var app = new Vue({
   methods: {
 
     loadOrders: function(){
-      //localStorage.setItem("ordersInKitchen", JSON.stringify(this.ordersInKitchen));
+      if (JSON.parse(localStorage.getItem("ordersInKitchen")) == null) {
+      localStorage.setItem("ordersInKitchen", JSON.stringify(this.ordersInKitchen));
+    }
       this.ordersInKitchen = JSON.parse(localStorage.getItem("ordersInKitchen"));
       var orderList = JSON.parse(localStorage.getItem("orderList"));
       if(orderList !== null){
