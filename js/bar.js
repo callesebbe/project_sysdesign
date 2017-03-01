@@ -1,11 +1,12 @@
 Vue.component('todo-item', {
   template: '\
     <li>\
-      {{ title }}\
-      <button v-on:click="$emit(\'remove\')">X</button>\
+      {{ count }}x{{ title }} \
+      <p style="color:red">{{ allerg[0] }}, {{allerg[1]}}, {{allerg[2]}}, {{allerg[3]}}</p> \
+      <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
     </li>\
   ',
-  props: ['title']
+  props: ['title','count','allerg','id',]
 })
 var orderItems = [];
 
@@ -16,73 +17,115 @@ var app = new Vue({
     show2 :false,
     show : true,
     count : 1,
+    listcount: 0,
     name : '',
     WB : false,
     ischecked : false,
     grade: '',
     lastGrading: 0,
     timeSincelastGrading: 0,
+    listOfTodos: [],
+    todos: [],
+    tablechoice: false,
+    coun: "",
+    tablenr: "",
+    idt: 1,
 
-    todos: [
-    ]
-  },
+     },
   methods: {
     decrement: function () {
+          this.todos[this.listcount -1 ].count -= 1;
       this.count -= 1
     },
     increment: function() {
+          this.todos[this.listcount -1].count += 1;
       this.count += 1
     },
     placeOrder: function(typee) {
-      if (temp > 0){
 
-      this.todos.push(this.count + "x " + this.name + ": " + this.allergicheck())
-    }
-      this.WB = true,
-      temp += 1;
-      this.count = 1,
-      this.show2 = true,
-      this.uncheckallergi(),
-      orderItems = [],
-      this.name = typee
+     var typ = {typee};
+     //typ.id = this.id,
+     this.listcount += 1,
+     this.WB = true,
+     this.count = 1,
+     this.show2 = true,
+     typ.orderItems = [],
+     typ.count = this.count,
+     this.name = typee,
+     this.uncheckallergi(),
+     this.todos.push(typ)
+   },
 
-    },
     sendOrder: function() {
+
+      if(this.listcount == 0) {
+      }
+      else {
+      this.tablechoice = true
       this.show2 = false,
       this.count = 1,
       this.temp = 0,
-      this.WB = false,
-      this.todos = []
+      this.WB = false
+    }
+
     },
 
-    reviewOrder: function() {
-      if (temp > 0){
-      this.todos.push(this.count + "x " + this.name + ": " + this.allergicheck()),
-      temp = 0,
-
+    reviewOrder: function(index) {
+      this.todos.splice(index, 1),
       this.show2 = false,
       this.uncheckallergi(),
-      orderItems = [],
-      this.WB = false
-      }
+      this.WB = false,
+      this.listcount -= 1
+
   },
-  allergicheck: function () {
-    var orderItems = [].filter.call(document.getElementsByName('order[]'), function(i) {
+
+    addtablenr: function(coun) {
+      this.tablenr = coun;
+      if (this.tablenr.length == 0){
+      }
+      else {
+      this.idt += 1;
+      for (var i = 0; i < this.listcount; i++) {
+        this.todos[i].tablenr = this.tablenr;
+        this.todos[i].idt = this.idt;
+        this.todos[i].claim = false;
+        this.todos[i].class = 'order';
+      }
+      this.coun = "",
+      this.tablechoice = false,
+      this.listcount = 0,
+      this.listOfTodos.push(this.todos);
+      localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
+      this.todos = []
+    };
+
+    },
+
+    allergicheck: function () {
+    var orderItems = [].filter.call(document.getElementsByName('order[]'),
+    function(i) {
       return i.checked;
-    }).map(function(i) {
-      return i.value;
+    }
+  ).map(function(i) {
+    return i.value;
     });
-    return orderItems
+
+    this.todos[this.listcount-1].orderItems = orderItems;
+
   },
   uncheckallergi: function () {
-    this.ischecked = false
-
-
+    var checkboxes = new Array();
+    checkboxes = document.getElementsByName('order[]');
+    for (var i=0; i<checkboxes.length; i++)  {
+      if (checkboxes[i].type == 'checkbox')   {
+        checkboxes[i].checked = false;
+      }
+    }
   },
   goToPage: function(url) {
     localStorage.setItem( "grade", this.grade);
     localStorage.setItem( "lastGrading", this.lastGrading);
-
+    localStorage.setItem("orderID",this.idt);
     window.location= url;
   },
   changeGrade: function(color) {
@@ -113,9 +156,17 @@ var app = new Vue({
   },
 
   load: function() {
-    this.grade = localStorage.getItem("grade");
+    this.id = parseInt(localStorage.getItem("orderID"));
+    if(localStorage.getItem("grade") == null) {
+      this.grade = 'gradingGreen';
+    }else {
+    this.grade = localStorage.getItem("grade")
+    }
+    if(localStorage.getItem("lastGrading") == null) {
+      this.lastGrading = 0;
+    }else {
     this.lastGrading = localStorage.getItem("lastGrading");
-
+    }
     document.getElementById(this.grade).value = "X";
 
     this.updateGrading();
