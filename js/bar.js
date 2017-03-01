@@ -84,7 +84,7 @@ var app = new Vue({
       if (this.tablenr.length == 0){
       }
       else {
-      this.id += 1;
+      this.idt += 1;
       for (var i = 0; i < this.listcount; i++) {
         this.todos[i].tablenr = this.tablenr;
         this.todos[i].idt = this.idt;
