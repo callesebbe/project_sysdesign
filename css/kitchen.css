@@ -43,11 +43,20 @@ button:hover {
 .order {
   border-radius: 8px;
   padding: 3%;
-  width: 10%;
-  background-color: red;
-  border: 1px solid green;
+  width: 25%;
+  background-color: yellow;
 }
 .order ul,li {
+  margin: 0;
+  padding: 0;
+}
+.orderClaimed {
+  border-radius: 8px;
+  padding: 3%;
+  width: 25%;
+  background-color: red;
+}
+.orderClaimed ul,li {
   margin: 0;
   padding: 0;
 }

@@ -72,10 +72,6 @@ var app = new Vue({
     },*/
     sendOrder: function() {
 
-      this.listOfTodos.push(this.todos);
-      localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
-
-
       if(this.listcount == 0) {
       }
       else {
@@ -84,7 +80,11 @@ var app = new Vue({
       this.show2 = false,
       this.count = 1,
       this.temp = 0,
+      this.listOfTodos.push(this.todos);
+      localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
+
       this.WB = false
+
     }
 
     },
