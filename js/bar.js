@@ -1,7 +1,6 @@
 Vue.component('todo-item', {
   template: '\
     <li>\
-      <p style="font-weight:bold">OrderNR: #{{ id }}</p>  \
       {{ count }}x{{ title }} \
       <p style="color:red">{{ allerg[0] }}, {{allerg[1]}}, {{allerg[2]}}, {{allerg[3]}}</p> \
       <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
@@ -30,7 +29,7 @@ var app = new Vue({
     tablechoice: false,
     coun: "",
     tablenr: "",
-    id: 1,
+    idt: 1,
 
      },
   methods: {
@@ -45,7 +44,7 @@ var app = new Vue({
     placeOrder: function(typee) {
 
      var typ = {typee};
-     typ.id = this.id,
+     //typ.id = this.id,
      this.listcount += 1,
      this.WB = true,
      this.count = 1,
@@ -56,20 +55,7 @@ var app = new Vue({
      this.uncheckallergi(),
      this.todos.push(typ)
    },
-    /*placeOrder: function(typee) {
-      if (temp > 0){
 
-      this.todos.push(this.count + "x " + this.name + ": " + this.allergicheck())
-    }
-      this.WB = true,
-      temp += 1;
-      this.count = 1,
-      this.show2 = true,
-      this.uncheckallergi(),
-      orderItems = [],
-      this.name = typee
-
-    },*/
     sendOrder: function() {
 
       if(this.listcount == 0) {
@@ -95,14 +81,13 @@ var app = new Vue({
 
     addtablenr: function(coun) {
       this.tablenr = coun;
-      this.id = parseInt(localStorage.getItem("orderID"));
       if (this.tablenr.length == 0){
       }
       else {
       this.id += 1;
       for (var i = 0; i < this.listcount; i++) {
         this.todos[i].tablenr = this.tablenr;
-        this.todos[i].id = this.id;
+        this.todos[i].idt = this.idt;
         this.todos[i].claim = false;
         this.todos[i].class = 'order';
       }
@@ -112,7 +97,6 @@ var app = new Vue({
       this.listOfTodos.push(this.todos);
       localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
       this.todos = []
-
     };
 
     },
@@ -129,14 +113,6 @@ var app = new Vue({
     this.todos[this.listcount-1].orderItems = orderItems;
 
   },
-/*  allergicheck: function () {
-    var orderItems = [].filter.call(document.getElementsByName('order[]'), function(i) {
-      return i.checked;
-    }).map(function(i) {
-      return i.value;
-    });
-    return orderItems
-  },*/
   uncheckallergi: function () {
     var checkboxes = new Array();
     checkboxes = document.getElementsByName('order[]');
@@ -149,7 +125,7 @@ var app = new Vue({
   goToPage: function(url) {
     localStorage.setItem( "grade", this.grade);
     localStorage.setItem( "lastGrading", this.lastGrading);
-    localStorage.setItem("orderID",this.id);
+    localStorage.setItem("orderID",this.idt);
     window.location= url;
   },
   changeGrade: function(color) {
@@ -180,6 +156,7 @@ var app = new Vue({
   },
 
   load: function() {
+    this.id = parseInt(localStorage.getItem("orderID"));
     if(localStorage.getItem("grade") == null) {
       this.grade = 'gradingGreen';
     }else {
