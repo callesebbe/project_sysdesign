@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+     <head>
+         <script src="https://unpkg.com/vue/dist/vue.js"></script>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <title>Kitchen </title>
+         <link rel="stylesheet" type="text/css" href="css/kitchen.css">
+    </head>
+
+    <body>
+      <main>
+        <div id="bar" ><h1>Order Queue</h1></div>
+        <div id="app">
+      <div>
+        <button @click="goToPage('bar.html')" class="button" id="startpagebutton" type="submit">Back to Bar</button>
+      </div>
+      <div id="orderDivs">
+        <div
+          is="order-div"
+          v-for="o in ordersInKitchen"
+          v-bind:order="o"
+          v-on:remove="todos.splice(index, 1)"
+          ></div>
+      </div>
+      
+    </div>
+    </main>
+    <script src="js/orderQueueVue.js"></script>
+    </body>
+</html>
