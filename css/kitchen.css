@@ -46,6 +46,11 @@ button:hover {
   padding: 3%;
   width: 25%;
   background-color: yellow;
+  border: 1px solid white;
+}
+.order:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
 .order ul,li {
   margin: 0;
@@ -57,6 +62,11 @@ button:hover {
   padding: 3%;
   width: 25%;
   background-color: red;
+  border: 1px solid white;
+}
+.orderClaimed:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
 .orderClaimed ul,li {
   margin: 0;

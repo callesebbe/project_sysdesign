@@ -1,6 +1,6 @@
 Vue.component('order-div', {
   template: '\
-  <div  :class="order[0].class" @click="orderOperation(order)"> \
+  <div :class="order[0].class" @click="orderOperation(order)"> \
   <p v-for="(o,index) in order" v-if="index<1">OrderId: #{{o.idt}} </br> Tablenr:{{o.tablenr}}</p>\
     <li v-for="o in order">{{o.count}}x{{o.typee}}  \
     <ul> \
