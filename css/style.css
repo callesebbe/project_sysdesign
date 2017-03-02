@@ -8,6 +8,11 @@ h1 {
   padding: 2% 0 0 2%;
 }
 
+.hoverEffect:hover {
+  border: 2px solid black;
+  cursor: pointer;
+}
+
 #infoUpperLeft,#infoUpperRight,#infoLowerLeft,#infoLowerRight {
   width: 46%;
   display: flex;
@@ -85,6 +90,7 @@ h1 {
   height: 100%;
 
 }
+
 #gradingContainer input{
   height: 100%;
   width: 100%;

@@ -30,18 +30,18 @@
 
       <div id="infoLowerLeft">
         <label class="infoHeader">Application Descripton</label>
-        <input onclick="alert('Not implemented')" type="button" id="kitchenDesc" value="Kitchen">
-        <input onclick="alert('Not implemented')" type="button" id="barDesc" value="Bar">
-        <input onclick="alert('Not implemented')" type="button" id="waitorDesc" value="Waitor">
-        <input onclick="alert('Not implemented')" type="button" id="receptionDesc" value="Reception">
+        <input onclick="alert('Not implemented')" class="hoverEffect" type="button" id="kitchenDesc" value="Kitchen">
+        <input onclick="alert('Not implemented')" class="hoverEffect" type="button" id="barDesc" value="Bar">
+        <input onclick="alert('Not implemented')" class="hoverEffect" type="button" id="waitorDesc" value="Waitor">
+        <input onclick="alert('Not implemented')" class="hoverEffect" type="button" id="receptionDesc" value="Reception">
       </div>
 
       <div id="infoLowerRight">
         <label class="infoHeader">User Workstation</label>
-        <input type="button" onclick="alert('Not implemented')" id="kitchenStation" value="Kitchen">
-        <input type="button" @click="goToPage('bar.html');return false;"id="barStation" value="Bar">
-        <input type="button" onclick="alert('not implemented')" id="waitorStation" value="Waitor">
-        <input type="button" @click="goToPage('reception.html');return false;" id="receptionStation" value="Reception">
+        <input class="hoverEffect" type="button" @click="goToPage('kitchen.html');return false;" id="kitchenStation" value="Kitchen">
+        <input class="hoverEffect" type="button" @click="goToPage('bar.html');return false;"id="barStation" value="Bar">
+        <input class="hoverEffect" type="button" onclick="alert('not implemented')" id="waitorStation" value="Waitor">
+        <input class="hoverEffect" type="button" @click="goToPage('reception.html');return false;" id="receptionStation" value="Reception">
       </div>
 
     </div>
