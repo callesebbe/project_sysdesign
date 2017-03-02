@@ -7,7 +7,7 @@ Vue.component('order-div', {
     <li style="list-style-type:none" v-for="a in o.orderItems">- {{a}}</li> \
     </ul>\
     </li> \
-    <input id="orderRemoveButton" type="button" v-on:click="remove(order)" value="Remove">\
+    <input v-if="order[0].claim != true" id="orderRemoveButton" type="button" v-on:click="remove(order)" value="Remove">\
     </button>\
   ',
  methods: {
