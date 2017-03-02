@@ -43,16 +43,19 @@ var reception = new Vue({
     },
 
     updateGrading: function(){
-      var now = new Date().getTime();
-      var difference = now - this.lastGrading;
-      //Should be minutes
-      var differenceInSec = Math.round(difference / 1000);
-      if(differenceInSec <60) {
-        this.timeSincelastGrading = differenceInSec+" seconds ago";
-      }else {
-        this.timeSincelastGrading = Math.round(differenceInSec /60)+" minute(s) ago";
-        }
-      }
+     var now = new Date().getTime();
+    var difference = now - this.lastGrading;
+    this.timeSincelastGrading = "Latest Update: "
+    var differenceInSec = Math.round(difference / 1000);
+      
+    if(differenceInSec <60) {
+      this.timeSincelastGrading += differenceInSec+" seconds ago";
+    }
+    else {
+        var differenceInMin = Math.round(differenceInSec /60)
+        this.timeSincelastGrading += differenceInMin + (differenceInMin > 1? " minutes ": " minute ") + "ago"
+    }
+  }
   }
 })
 
