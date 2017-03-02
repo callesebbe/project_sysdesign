@@ -6,7 +6,7 @@ Vue.component('todo-item', {
       <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
     </li>\
   ',
-  props: ['title','count','allerg','id',]
+  props: ['title','count','allerg']
 })
 var orderItems = [];
 
@@ -80,17 +80,23 @@ var app = new Vue({
   },
 
     addtablenr: function(coun) {
+      if (localStorage.getItem("orderID") === null) {
+        this.idt= 0;
+      }else {
+      this.idt = parseInt(localStorage.getItem("orderID"));
+      }
       this.tablenr = coun;
+      this.idt += 1;
       if (this.tablenr.length == 0){
       }
       else {
-      this.idt += 1;
       for (var i = 0; i < this.listcount; i++) {
         this.todos[i].tablenr = this.tablenr;
         this.todos[i].idt = this.idt;
         this.todos[i].claim = false;
         this.todos[i].class = 'order';
       }
+      localStorage.setItem("orderID",this.idt);
       this.coun = "",
       this.tablechoice = false,
       this.listcount = 0,
@@ -125,7 +131,7 @@ var app = new Vue({
   goToPage: function(url) {
     localStorage.setItem( "grade", this.grade);
     localStorage.setItem( "lastGrading", this.lastGrading);
-    localStorage.setItem("orderID",this.idt);
+    localStorage.setItem("orderID",this.idt.toString());
     window.location= url;
   },
   changeGrade: function(color) {
