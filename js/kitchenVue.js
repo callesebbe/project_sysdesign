@@ -1,13 +1,13 @@
 Vue.component('order-div', {
   template: '\
   <div  :class="order[0].class" @click="orderOperation(order)"> \
-  <p v-for="(o,index) in order" v-if="index<1">#{{o.idt}} Tablenr:{{o.tablenr}}</p>\
+  <p v-for="(o,index) in order" v-if="index<1">OrderId: #{{o.idt}} </br> Tablenr:{{o.tablenr}}</p>\
     <li v-for="o in order">{{o.count}}x{{o.typee}}  \
     <ul> \
     <li style="list-style-type:none" v-for="a in o.orderItems">- {{a}}</li> \
     </ul>\
     </li> \
-    <input style="" type="button" v-on:click="remove(order)" value="Remove">\
+    <input id="orderRemoveButton" type="button" v-on:click="remove(order)" value="Done">\
     </div>\
   ',
  methods: {

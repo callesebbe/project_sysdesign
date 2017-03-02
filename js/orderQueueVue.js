@@ -7,22 +7,17 @@ Vue.component('order-div', {
     <li style="list-style-type:none" v-for="a in o.orderItems">- {{a}}</li> \
     </ul>\
     </li> \
+    <input id="orderRemoveButton" type="button" v-on:click="remove(order)" value="Remove">\
     </button>\
   ',
  methods: {
-   orderOperation: function(order) {
-     if(order[0].claim == false) {
-      order[0].claim = true;
-      order[0].class = 'orderClaimed';
-      localStorage.setItem("ordersInKitchen", JSON.stringify(app.ordersInKitchen));
-
-    }else {
-      i = app.ordersInKitchen.indexOf(order);
-      app.ordersInKitchen.splice(i,1);
-      localStorage.setItem("ordersInKitchen", JSON.stringify(app.ordersInKitchen));
-    }
-  }
-},
+remove: function(o) {
+  //var event = arguments[0] || window.event;
+  //event.cancelBubble = true;
+  i = app.ordersInKitchen.indexOf(o);
+  app.ordersInKitchen.splice(i,1);
+  localStorage.setItem("ordersInKitchen", JSON.stringify(app.ordersInKitchen));
+}},
   props: ['order']
  })
 
@@ -52,10 +47,10 @@ var app = new Vue({
       localStorage.removeItem("orderList");
     } ,
 
-    goToPage: function(url) { 
+    goToPage: function(url) {
       window.location= url;
     },
-   
+
   }
 })
 
