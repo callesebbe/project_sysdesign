@@ -26,4 +26,4 @@ The app contains 4 different workstations.
 
 ###4. Bar
 - Here you create orders. When you press a particular dish you're prompted with some options(chosing amount, preferations). When you're done with the order you simply press the **Send Order**-button which prompts you with chosing of table number.
-- By pressing the **Order Queue** button you're able to see which orders that are claimed and not(red or yellow). If they aren't claimed yet you can remove them from the queue by pressing the **Remove** button. ***How occupied is the restaurant?*** is used to inform the Reception about how crowded the pub is, the more to the left/*Green*, the less crowed.  
+- By pressing the **Order Queue** button you're able to see which orders that are claimed and not(red or yellow). If they aren't claimed yet you can remove them from the queue by pressing the **Remove** button. **How occupied is the restaurant?** is used to inform the Reception about how crowded the pub is, the more to the left/*Green*, the less crowed.  
