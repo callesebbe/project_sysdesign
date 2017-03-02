@@ -16,11 +16,28 @@ var v = new Vue({
     },
       
     loadInfo: function() {
-         this.managername = localStorage.getItem("managername");
+        
+        
+        
+        if(localStorage.getItem("managername") !== null){
+            this.managername = localStorage.getItem("managername");
+        }
+        if(localStorage.getItem("managerphone") != null){
          this.managerphone = localStorage.getItem("managerphone");
+        }
+        if(localStorage.getItem("notes") != null){
          this.notes = localStorage.getItem("notes");
+        }
+         if(localStorage.getItem("notes") == null){
+         localStorage.setItem( "lastGrading", 0);
+            
+        }
+        
+        
+        
     }
   }
 })
+
 
 v.loadInfo();

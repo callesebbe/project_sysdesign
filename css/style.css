@@ -20,6 +20,7 @@ h1 {
   padding: 2%;
 }
 
+
 .managerInfo{
   width: 100%;
   font-weight: 900;
@@ -39,20 +40,20 @@ h1 {
 }
 
 #infoLowerLeft input, #infoLowerRight input {
-  font-size: 300%;
+  font-size: 250%;
   width:45%;
   padding: 5%;
   border-radius: 10px;
 }
 
 
-#infoLowerLeft input {
+#infoLowerRight input {
   background-color: #800000;
   color: white;
 }
 
-#infoLowerRight input {
-  background-color: white;
+#infoLowerLeft input {
+  background-color: #800000;
   color: black;
 }
 

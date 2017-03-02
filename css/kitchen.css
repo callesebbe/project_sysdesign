@@ -41,24 +41,47 @@ button:hover {
   flex-wrap: wrap;
 }
 .order {
+  color: black;
   border-radius: 8px;
   padding: 3%;
   width: 25%;
   background-color: yellow;
+  border: 1px solid white;
+}
+.order:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
 .order ul,li {
   margin: 0;
   padding: 0;
 }
 .orderClaimed {
+  color: black;
   border-radius: 8px;
   padding: 3%;
   width: 25%;
   background-color: red;
+  border: 1px solid white;
+}
+.orderClaimed:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
 .orderClaimed ul,li {
   margin: 0;
   padding: 0;
+}
+#orderRemoveButton {
+  width: 100%;
+  padding: 5% 0 5% 0;
+  margin: 2% 0 0 0;
+  border-radius: 5px;
+}
+#orderRemoveButton:hover {
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 #gradingDiv {
