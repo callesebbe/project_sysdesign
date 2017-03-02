@@ -7,14 +7,7 @@ h1 {
   font-size: 400%;
   margin-top: 0%;
 }
-input:hover {
-  border: 1px solid black;
-  cursor: pointer;
-}
-button:hover {
-  border: 1px solid black;
-  cursor: pointer;
-}
+
 
 .button {
   font-size: 20px;
@@ -32,6 +25,10 @@ button:hover {
   top: 2%;
   right:2%;
 }
+#startpagebutton:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
 
 #orderDivs {
   height: 80%;
@@ -42,7 +39,6 @@ button:hover {
 }
 .order {
   color: black;
-  border-radius: 8px;
   padding: 3%;
   width: 25%;
   background-color: yellow;
@@ -53,7 +49,6 @@ button:hover {
 }
 .orderClaimed {
   color: black;
-  border-radius: 8px;
   padding: 3%;
   width: 25%;
   background-color: red;
@@ -72,46 +67,4 @@ button:hover {
   border: 2px solid black;
   cursor: pointer;
   border-radius: 5px;
-}
-
-#gradingDiv {
-    margin: 3% 0 0 20%;
-}
-
-#gradingContainer {
-  display: flex;
-  flex-wrap: wrap;
-  height: 50px;
-  width: 20%;
-  justify-content: space-between;
-}
-
-#gradingContainer div {
-  flex-basis: 24%;
-  height: 100%;
-
-}
-#gradingContainer input{
-  height: 100%;
-  width: 100%;
-  font-size: 100%;
-  color: white;
-  line-height: 100%;
-  font-weight: bold;
-  text-align: center;
-}
-#gradingGreen  {
-  background-color: #01DF01;
-}
-
-#gradingYellow  {
-  background-color: #FFFF00;
-}
-
-#gradingOrange  {
-  background-color: #FF8000;
-}
-
-#gradingRed  {
-  background-color: #DF0101;
 }
