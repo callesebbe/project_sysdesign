@@ -1,6 +1,6 @@
 Vue.component('order-div', {
   template: '\
-  <button  :class="order[0].class" > \
+  <div  :class="order[0].class" > \
   <p v-for="(o,index) in order" v-if="index<1">#{{o.idt}} Tablenr:{{o.tablenr}}</p>\
     <li v-for="o in order">{{o.count}}x{{o.typee}}  \
     <ul> \
@@ -8,7 +8,7 @@ Vue.component('order-div', {
     </ul>\
     </li> \
     <input v-if="order[0].claim != true" id="orderRemoveButton" type="button" v-on:click="remove(order)" value="Remove">\
-    </button>\
+    </div>\
   ',
  methods: {
 remove: function(o) {
