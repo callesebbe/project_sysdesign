@@ -101,7 +101,6 @@ var app = new Vue({
       this.tablechoice = false,
       this.listcount = 0,
       this.listOfTodos.push(this.todos);
-      localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
       this.todos = []
     };
 
@@ -129,6 +128,7 @@ var app = new Vue({
     }
   },
   goToPage: function(url) {
+    localStorage.setItem("orderList", JSON.stringify(this.listOfTodos));
     localStorage.setItem( "grade", this.grade);
     localStorage.setItem( "lastGrading", this.lastGrading);
     localStorage.setItem("orderID",this.idt.toString());
