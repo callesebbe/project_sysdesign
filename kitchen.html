@@ -23,24 +23,6 @@
           v-on:remove="todos.splice(index, 1)"
           ></div>
       </div>
-      <div id="gradingDiv">
-        <div id ="gradingContainer">
-          <div>
-            <input id="gradingGreen" @click="changeGrade('gradingGreen')" type="button" value="">
-          </div>
-          <div>
-            <input id="gradingYellow" @click="changeGrade('gradingYellow')" type="button" value="">
-          </div>
-          <div>
-            <input id="gradingOrange" @click="changeGrade('gradingOrange')" type="button" value="">
-          </div>
-          <div>
-            <input id="gradingRed" @click="changeGrade('gradingRed')" type="button" value="">
-          </div>
-        </div>
-        <p> {{timeSincelastGrading}} seconds ago
-      </div>
-    </div>
     </div>
     </main>
     <script src="js/kitchenVue.js"></script>
