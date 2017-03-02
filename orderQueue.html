@@ -10,10 +10,10 @@
 
     <body>
       <main>
-        <div id="bar" ><h1>Kitchen</h1></div>
+        <div id="bar" ><h1>Order Queue</h1></div>
         <div id="app">
       <div>
-        <button @click="goToPage('index.html')" class="button" id="startpagebutton" type="submit">Start Page</button>
+        <button @click="goToPage('bar.html')" class="button" id="startpagebutton" type="submit">Back to Bar</button>
       </div>
       <div id="orderDivs">
         <div
@@ -23,8 +23,9 @@
           v-on:remove="todos.splice(index, 1)"
           ></div>
       </div>
+      
     </div>
     </main>
-    <script src="js/kitchenVue.js"></script>
+    <script src="js/orderQueueVue.js"></script>
     </body>
 </html>

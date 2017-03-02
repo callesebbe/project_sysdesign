@@ -15,12 +15,17 @@ var reception = new Vue({
     },
 
     loadReception: function() {
-         this.grade = localStorage.getItem("grade");
+        if(localStorage.getItem("grade") != null){
+            this.grade = localStorage.getItem("grade");
+        }
+        if(localStorage.getItem("lastGrading") != null){
          this.lastGrading = localStorage.getItem("lastGrading");
-
+        }
+        
+        if(this.grade != ''){
          document.getElementById(this.grade).value = "X";
-
          this.updateGrading();
+        }
     },
 
     changeGrade: function(color) {
