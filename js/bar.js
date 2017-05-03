@@ -2,8 +2,9 @@ Vue.component('todo-item', {
   template: '\
     <li>\
       {{ count }}x{{ title }} \
-      <p style="color:red">{{ allerg[0] }}, {{allerg[1]}}, {{allerg[2]}}, {{allerg[3]}}</p> \
+      <p style="color:red"><span class="allergiitem" v-for="allergi in allerg">{{allergi}}</span> </p> \
       <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
+ 	  <input type="button" v-on:click="$emit(\'edit\')" value="Edit">\
     </li>\
   ',
   props: ['title','count','allerg']
@@ -30,6 +31,7 @@ var app = new Vue({
     coun: "",
     tablenr: "",
     idt: 1,
+	index: 0,
 
      },
   methods: {
@@ -70,14 +72,30 @@ var app = new Vue({
 
     },
 
-    reviewOrder: function(index) {
-      this.todos.splice(index, 1),
-      this.show2 = false,
-      this.uncheckallergi(),
-      this.WB = false,
-      this.listcount -= 1
-
-  },
+    editOrder: function(index) {
+		
+		this.show2 = true;
+		this.WB = true;
+		this.index = index;
+		for(var i = 0; i < document.getElementsByName("order[]").length; i++){
+			document.getElementsByName("order[]")[i].checked = false;
+			for(var j = 0; j < this.todos[index].orderItems.length; j++){
+				if(this.todos[index].orderItems[j] == document.getElementsByName("order[]")[i].value){
+					document.getElementsByName("order[]")[i].checked = true;
+				}
+			
+			}
+		}
+	},
+		
+    removeOrder: function(index){
+	  	this.todos.splice(index, 1),
+      	this.show2 = false,
+      	this.uncheckallergi(),
+      	this.WB = false,
+      	this.listcount--,
+		this.index--
+  	},
 
     addtablenr: function(coun) {
       if (localStorage.getItem("orderID") === null) {
@@ -115,7 +133,7 @@ var app = new Vue({
     return i.value;
     });
 
-    this.todos[this.listcount-1].orderItems = orderItems;
+    this.todos[this.index].orderItems = orderItems;
 
   },
   uncheckallergi: function () {

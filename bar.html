@@ -57,21 +57,29 @@
     v-bind:count ="todo.count"
     v-bind:allerg ="todo.orderItems"
     v-bind:id="todo.id"
-    v-on:remove="reviewOrder(index)"
+    v-on:remove="removeOrder(index)"
+	v-on:edit="editOrder(index)"
     ></li>
 
   </ul>
 </div>
 <div class="allergibox" v-show="WB">
 <form action="">
-  <input id="extra bacon" type="checkbox" name="order[]" value="extra bacon"  v-on:click="allergicheck"> Extra bacon
- <br><br><input id="lök" type="checkbox" name="order[]" value="utan lök"  v-on:click="allergicheck"> Utan lök
- <br><br><input id="gluten" type="checkbox" name="order[]" value="glutenfri"  v-on:click="allergicheck"> Glutenfri
- <br><br><input id="laktos" type="checkbox" name="order[]" value="laktosfri"  v-on:click="allergicheck"> Laktosfri
-
+   <label><input id="extra bacon" type="checkbox" name="order[]" value="extra bacon"  v-on:click="allergicheck"> Extra bacon</label>
+ <br><br><label><input id="lök" type="checkbox" name="order[]" value="utan lök"  v-on:click="allergicheck"> Utan lök </label>
+	<br><br><label><input id="gluten" type="checkbox" name="order[]" value="glutenfri"  v-on:click="allergicheck"> Glutenfri </label>
+ <br><br><label><input id="laktos" type="checkbox" name="order[]" value="laktosfri"  v-on:click="allergicheck"> Laktosfri</label>
 </form>
-
+</div>
+<div id="amount" v-show="show2">
+    <h3 style="margin-top:-2%">Quantity: </h3>
+      <p id="amountdisplay" >
+        {{ count }}
+      </p>
+      <button id="decr" v-on:click="decrement">-</button>
+      <button id="incr" v-on:click="increment">+</button>
   </div>
+ 
   <div id="gradingDiv">
     <h3 style="margin-top: 30%">How occupied is the restaurant?</h3>
     <div id ="gradingContainer">
@@ -90,14 +98,7 @@
     </div>
     <p> {{timeSincelastGrading}}
     </div>
-  <div id="amount" v-show="show2">
-    <h3 style="margin-top:-2%">Quantity: </h3>
-      <p id="amountdisplay" >
-        {{ count }}
-      </p>
-      <button id="decr" v-on:click="decrement">-</button>
-      <button id="incr" v-on:click="increment">+</button>
-  </div>
+  
   <div id="container" v-show="tablechoice" v-cloak>
     <p id="tabletext">Table number: {{ coun}}</p>
       <ul id="keyboard">
