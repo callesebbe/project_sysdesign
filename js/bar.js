@@ -2,7 +2,7 @@ Vue.component('todo-item', {
   template: '\
     <li class="orderDisplay">\
       {{ count }}x{{ title }} \
-      <p style="color:#FA8258"><span class="allergiitem" v-for="allergi in allerg">{{allergi}}</span> </p> \
+      <p style="color:#FE2E64"><span class="allergiitem" v-for="allergi in allerg">{{allergi}}</span> </p> \
       <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
  	  <input type="button" v-on:click="$emit(\'edit\')" value="Edit">\
     </li>\
