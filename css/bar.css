@@ -60,9 +60,7 @@ button:hover {
 
 
 #listbox li {
-  background-color: white;
   color: black;
-
   margin-top: 1%;
   width: 90%;
 
@@ -164,15 +162,13 @@ td {
 }
 
 #amount #decr {
-<<<<<<< HEAD
+
 	bottom: 35px; 
 	left: 5px;
-=======
-	bottom: 35px;
-	right: 4px;
->>>>>>> 427e72d63b04dc133418f9823b255119599cfae3
 	position: relative;
 }
+
+
 
 #amount #incr {
 	bottom: 35px;
@@ -187,15 +183,8 @@ td {
 }
 
 #amount {
-
-<<<<<<< HEAD
-
   top: 15%;
   right: 23%;
-=======
-  top: 5%;
-  left: 56%;
->>>>>>> 427e72d63b04dc133418f9823b255119599cfae3
   position: absolute;
   width: 10%;
   float:left;
@@ -249,6 +238,7 @@ td {
   color: white;
 }
 
+
 #container {
 position: absolute;
 top:22%;
@@ -264,6 +254,9 @@ height: 320px;
 width: 201px;
 color: black;
 }
+
+
+
 #keyboard {
 background-color: black;
 margin: 0;
@@ -327,3 +320,7 @@ list-style: none;
         border-color: #e5e5e5;
         cursor: pointer;
         }
+
+.orderDisplay {
+	background: #ACFA58; 
+}
