@@ -1,6 +1,6 @@
 Vue.component('todo-item', {
   template: '\
-    <li >\
+    <li class="orderDisplay">\
       {{ count }}x{{ title }} \
       <p style="color:red"><span class="allergiitem" v-for="allergi in allerg">{{allergi}}</span> </p> \
       <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
@@ -47,8 +47,11 @@ var app = new Vue({
       	  this.count = this.todos[this.index].count;
 		 console.log(  this.count);
     },
-    placeOrder: function(typee) {
-	 this.index = this.listcount ;
+    placeOrder: function(typee) {	
+		
+	
+		
+	 this.index = this.listcount;	
      var typ = {typee};
      //typ.id = this.id,
      this.listcount += 1,
@@ -60,6 +63,18 @@ var app = new Vue({
      this.name = typee,
      this.uncheckallergi(),
      this.todos.push(typ)
+	 
+	 
+	 var orderDisplay = document.getElementsByClassName("orderDisplay");
+		console.log(orderDisplay.length);
+	  if(orderDisplay.length ){	
+		for(var i = 0; i < orderDisplay.length; i++){
+			orderDisplay[i].style.background = "white";
+		}
+		    
+			
+	  }
+		
    },
 
     sendOrder: function() {
@@ -77,12 +92,21 @@ var app = new Vue({
     },
 
     editOrder: function(index) {
+		
 		this.count = this.todos[index].count;
 		this.show2 = true;
 		this.WB = true;
 		this.index = index;
 		
-		for(var i = 0; i < document.getElementsByName("order[]").length; i++){
+	var orderDisplay = document.getElementsByClassName("orderDisplay");
+		for(var i = 0; i < orderDisplay.length; i++){
+			orderDisplay[i].style.background = "white";
+		}
+			orderDisplay[index].style.background = "#ACFA58";
+		
+		
+		for(var i = 0; i <
+			document.getElementsByName("order[]").length; i++){
 			document.getElementsByName("order[]")[i].checked = false;
 			
 			for(var j = 0; j < this.todos[index].orderItems.length; j++){
