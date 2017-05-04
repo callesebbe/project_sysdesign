@@ -45,7 +45,7 @@ button:hover {
   border-radius: 8px;
   padding: 3%;
   width: 25%;
-  background-color: yellow;
+  background-color: #ACFA58;
   border: 1px solid white;
 }
 .order:hover {
@@ -61,7 +61,7 @@ button:hover {
   border-radius: 8px;
   padding: 3%;
   width: 25%;
-  background-color: red;
+  background-color: #FA5858;
   border: 1px solid white;
 }
 .orderClaimed:hover {

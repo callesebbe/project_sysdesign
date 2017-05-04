@@ -41,7 +41,7 @@ h1 {
   color: black;
   padding: 3%;
   width: 25%;
-  background-color: yellow;
+  background-color: #ACFA58;
 }
 .order ul,li {
   margin: 0;
@@ -51,7 +51,7 @@ h1 {
   color: black;
   padding: 3%;
   width: 25%;
-  background-color: red;
+  background-color: #FA5858;
 }
 .orderClaimed ul,li {
   margin: 0;
