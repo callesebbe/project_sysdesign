@@ -79,8 +79,8 @@ button:hover {
 }
 
 #orderqueuebutton {
-  background-color: #cc66ff;
-  color:black;
+  background-color: #800000;
+  color: white;
   font-weight:bold;
   top:2%;
   right:19%;
@@ -163,7 +163,7 @@ td {
 
 #amount #decr {
 
-	bottom: 35px; 
+	bottom: 35px;
 	left: 5px;
 	position: relative;
 }
@@ -322,5 +322,5 @@ list-style: none;
         }
 
 .orderDisplay {
-	background: #ACFA58; 
+	background: #ACFA58;
 }
