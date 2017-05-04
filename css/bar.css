@@ -60,9 +60,9 @@ button:hover {
 
 
 #listbox li {
-  padding: 1%;
-  border-radius: 5px;
-  border: 1px solid white;
+  background-color: white;
+  color: black;
+
   margin-top: 1%;
   width: 90%;
 
@@ -81,8 +81,8 @@ button:hover {
 }
 
 #orderqueuebutton {
-  background-color: #971919;
-  color:white;
+  background-color: #cc66ff;
+  color:black;
   font-weight:bold;
   top:2%;
   right:19%;
@@ -97,7 +97,7 @@ button:hover {
 }
 
 #sendorderbutton {
-  background-color: #3AEC46;
+  background-color: lightcoral;
   color:black;
   font-weight:bold;
   bottom: 11%;
@@ -135,7 +135,7 @@ td {
   box-sizing: border-box;
   position: absolute;
   border-radius: 8px;
- 
+
 }
 
 .sallad {
@@ -164,8 +164,13 @@ td {
 }
 
 #amount #decr {
+<<<<<<< HEAD
 	bottom: 35px; 
 	left: 5px;
+=======
+	bottom: 35px;
+	right: 4px;
+>>>>>>> 427e72d63b04dc133418f9823b255119599cfae3
 	position: relative;
 }
 
@@ -176,16 +181,21 @@ td {
 }
 
 #amountdisplay {
-	
+
 	position: relative;
 	left: 50px;
 }
 
 #amount {
 
+<<<<<<< HEAD
 
   top: 15%;
   right: 23%;
+=======
+  top: 5%;
+  left: 56%;
+>>>>>>> 427e72d63b04dc133418f9823b255119599cfae3
   position: absolute;
   width: 10%;
   float:left;
@@ -247,8 +257,8 @@ right: 22%;
 border-radius: 5px;
 padding-left: 5px;
 text-align: center;
-border: solid blue;
-background-color: black;
+border: solid #4d2600;
+background-color: grey;
 margin: 100px auto;
 height: 320px;
 width: 201px;

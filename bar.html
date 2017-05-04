@@ -49,7 +49,7 @@
 
 
   <div id="listbox" >
-    <h3 style ="padding:0; margin:0;">Meals:</h3>
+  <h3 style ="padding:0; margin:0;">Meals:</h3>
   <ul style="list-style-type:none; padding:0;margin:0;">
     <li is="todo-item"
     v-for="(todo, index) in todos"
@@ -79,7 +79,7 @@
       <button id="decr" v-on:click="decrement">-</button>
       <button id="incr" v-on:click="increment">+</button>
   </div>
- 
+
   <div id="gradingDiv">
     <h3 style="margin-top: 30%">How occupied is the restaurant?</h3>
     <div id ="gradingContainer">
@@ -98,7 +98,7 @@
     </div>
     <p> {{timeSincelastGrading}}
     </div>
-  
+
   <div id="container" v-show="tablechoice" v-cloak>
     <p id="tabletext">Table number: {{ coun}}</p>
       <ul id="keyboard">

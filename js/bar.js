@@ -97,11 +97,11 @@ var app = new Vue({
 				if(this.todos[index].orderItems[j] == document.getElementsByName("order[]")[i].value){
 					document.getElementsByName("order[]")[i].checked = true;
 				}
-			
+
 			}
 		}
 	},
-		
+
     removeOrder: function(index){
 	  	this.todos.splice(index, 1),
       	this.show2 = false,
@@ -185,7 +185,7 @@ var app = new Vue({
     var difference = now - this.lastGrading;
     this.timeSincelastGrading = "Latest Update:  "
     var differenceInSec = Math.round(difference / 1000);
-      
+
     if(differenceInSec <60) {
       this.timeSincelastGrading += differenceInSec+" seconds ago";
     }
