@@ -2,7 +2,7 @@ Vue.component('todo-item', {
   template: '\
     <li class="orderDisplay">\
       {{ count }}x{{ title }} \
-      <p style="color:red"><span class="allergiitem" v-for="allergi in allerg">{{allergi}}</span> </p> \
+      <p style="color:#FA8258"><span class="allergiitem" v-for="allergi in allerg">{{allergi}}</span> </p> \
       <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
  	  <input type="button" v-on:click="$emit(\'edit\')" value="Edit">\
     </li>\
@@ -35,23 +35,23 @@ var app = new Vue({
 
      },
   methods: {
-	  
-	  
+
+
     decrement: function () {
           this.todos[this.index ].count -= 1;
-      	  this.count = this.todos[this.index].count; 
+      	  this.count = this.todos[this.index].count;
     },
     increment: function() {
-		 
+
           this.todos[this.index].count += 1;
       	  this.count = this.todos[this.index].count;
 		 console.log(  this.count);
     },
-    placeOrder: function(typee) {	
-		
-	
-		
-	 this.index = this.listcount;	
+    placeOrder: function(typee) {
+
+
+
+	 this.index = this.listcount;
      var typ = {typee};
      //typ.id = this.id,
      this.listcount += 1,
@@ -63,18 +63,18 @@ var app = new Vue({
      this.name = typee,
      this.uncheckallergi(),
      this.todos.push(typ)
-	 
-	 
+
+
 	 var orderDisplay = document.getElementsByClassName("orderDisplay");
 		console.log(orderDisplay.length);
-	  if(orderDisplay.length ){	
+	  if(orderDisplay.length ){
 		for(var i = 0; i < orderDisplay.length; i++){
 			orderDisplay[i].style.background = "white";
 		}
-		    
-			
+
+
 	  }
-		
+
    },
 
     sendOrder: function() {
@@ -92,23 +92,23 @@ var app = new Vue({
     },
 
     editOrder: function(index) {
-		
+
 		this.count = this.todos[index].count;
 		this.show2 = true;
 		this.WB = true;
 		this.index = index;
-		
+
 	var orderDisplay = document.getElementsByClassName("orderDisplay");
 		for(var i = 0; i < orderDisplay.length; i++){
 			orderDisplay[i].style.background = "white";
 		}
 			orderDisplay[index].style.background = "#ACFA58";
-		
-		
+
+
 		for(var i = 0; i <
 			document.getElementsByName("order[]").length; i++){
 			document.getElementsByName("order[]")[i].checked = false;
-			
+
 			for(var j = 0; j < this.todos[index].orderItems.length; j++){
 				if(this.todos[index].orderItems[j] == document.getElementsByName("order[]")[i].value){
 					document.getElementsByName("order[]")[i].checked = true;
@@ -124,7 +124,7 @@ var app = new Vue({
       	this.uncheckallergi(),
       	this.WB = false,
       	this.listcount--
-		 
+
   	},
 
     addtablenr: function(coun) {
@@ -233,7 +233,7 @@ var app = new Vue({
   }
 })
 
- 
+
 
 app.load();
 window.setInterval( app.updateGrading, 1000);
