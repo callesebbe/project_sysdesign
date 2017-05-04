@@ -165,29 +165,29 @@ td {
 
 #amount #decr {
 	bottom: 35px; 
-	right: 4px;
+	left: 5px;
 	position: relative;
 }
 
 #amount #incr {
 	bottom: 35px;
-	left: 40px;
+	left:  50px;
 	position: relative;
 }
 
 #amountdisplay {
 	
 	position: relative;
-	left: 40px;
+	left: 50px;
 }
 
 #amount {
-	
-  top: 5%;
-  left: 56%;
+
+
+  top: 15%;
+  right: 23%;
   position: absolute;
   width: 10%;
-  margin: 10% 0 0 10%;
   float:left;
 }
 

@@ -1,6 +1,6 @@
 Vue.component('todo-item', {
   template: '\
-    <li >\
+    <li class="orderDisplay">\
       {{ count }}x{{ title }} \
       <p style="color:red"><span class="allergiitem" v-for="allergi in allerg">{{allergi}}</span> </p> \
       <input type="button" v-on:click="$emit(\'remove\')" value="Remove">\
@@ -81,8 +81,16 @@ var app = new Vue({
 		this.show2 = true;
 		this.WB = true;
 		this.index = index;
+		var orderDisplay = document.getElementsByClassName("orderDisplay");
 		
-		for(var i = 0; i < document.getElementsByName("order[]").length; i++){
+		for(var i = 0; i < orderDisplay.length; i++){
+			orderDisplay[i].style.background = "black";
+		}
+			orderDisplay[index].style.background = "blue";
+		
+		
+		for(var i = 0; i <
+			document.getElementsByName("order[]").length; i++){
 			document.getElementsByName("order[]")[i].checked = false;
 			
 			for(var j = 0; j < this.todos[index].orderItems.length; j++){
