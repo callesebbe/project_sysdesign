@@ -46,6 +46,7 @@ button:hover {
   padding:0;
   max-height: 60%;
   overflow:hidden;
+  z-index:1;
 
 }
 
