@@ -237,6 +237,7 @@ td {
 
 #tabletext {
   color: white;
+  font-size: 28px;
 }
 
 
@@ -250,9 +251,9 @@ padding-left: 5px;
 text-align: center;
 border: solid #4d2600;
 background-color: grey;
-margin: 100px auto;
-height: 320px;
-width: 201px;
+margin: -3px auto;
+height: 520px;
+width: 278px;
 color: black;
 }
 
@@ -267,9 +268,9 @@ list-style: none;
     #keyboard li {
     float: left;
     margin: 0 5px 5px 0;
-    width: 55px;
-    height: 55px;
-    font-size: 24px;
+    width: 85px;
+    height: 85px;
+    font-size: 48px;
     line-height: 60px;
     text-align: center;
     background: #fff;
@@ -280,13 +281,13 @@ list-style: none;
         clear: left;
         }
             #keyboard .tab, #keyboard .delete {
-            width: 60px;
+            width: 85px;
             }
             #keyboard .capslock {
             width: 80px;
             }
             #keyboard .return {
-            width: 60px;
+            width: 85px;
             }
             #keyboard .left-shift{
             width: 60px;
@@ -309,7 +310,7 @@ list-style: none;
         width: 556px;
         }
         #keyboard .switch, #keyboard .space, #keyboard .return{
-        font-size: 16px;
+        font-size: 30px;
         }
         .on {
         display: none;
